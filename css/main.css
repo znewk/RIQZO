@@ -1,0 +1,16 @@
+.intro{
+    height: 650px;
+    width: 100%;
+    background-image: url('../img/main.png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    box-sizing: border-box;
+}
+.introSpan{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 72px;
+    color: white;
+}
