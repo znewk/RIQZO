@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RIQZO Online Market</title>
+    <title>RIQZO Grocery Market</title>
     <link rel="icon" type="image/png" href="./img/favicon.png">
 
     <!-- jquery  -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- fonts  -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
@@ -25,14 +24,14 @@
             <div class="headerNav">
                 <div class="myProfileBody">
                     <img src="./img/profile.png" class="uiIcon" alt="">
-                    <span class="uiItem">My profile</span>
+                    <span class="uiItem" id="profile">Личный кабинет</span>
                 </div>
                 <div class="myProfileBody">
                     <img src="./img/cart.png" class="uiIcon" alt="">
-                    <span class="uiItem">Cart</span>
+                    <span class="uiItem">Корзина</span>
                 </div>
                 <div class="myProfileBody">
-                    <span class="uiPrice">$23.4</span>
+                    <span class="uiPrice">1300.00kzt</span>
                 </div>
                 <img src="./img/search-icon.png" class="searchIcon" alt="">
             </div>
@@ -43,44 +42,171 @@
                 <span class="logo">RIQZO</span>
             </div>
             <div class="mainHeaderNav">
-                <a href="" class="headerItem">HOME</a>
-                <a href="" class="headerItem">BAGS</a>
-                <a href="" class="headerItem">SNEAKERS</a>
-                <a href="" class="headerItem">BELT</a>
-                <a href="" class="headerItem">CONTACT</a>
+                <a href="" class="headerItem">Главная</a>
+                <a href="" class="headerItem">Продукты</a>
+                <a href="" class="headerItem">Все категории</a>
+                <a href="" class="headerItem">О нас</a>
+                <a href="" class="headerItem">Контакты</a>
             </div>
         </div>
     </header>
-
+    <button onclick="createTestsArray()" style="position: fixed; right: 10px; bottom: 10px; z-index: 99999;">Создать
+        массив</button>
+    <button onclick="localStorage.removeItem('loggedUser')" style="position: fixed; right: 200px; bottom: 10px; z-index: 99999;">Выйтк</button>
 
     <div class="intro">
-        <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; flex-direction: column; justify-content: flex-start;">
             <span class="introSpan">
-                Super Flash Sale
+                RIQZO Online Market
             </span>
-            <span class="introSpan">
-                50% Off
+            <span class="introSpan" style="font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 24px;">
+                Топ 1 на рынке Казахстана
             </span>
+            <button class="orangeButton" style="width: 50%; margin-top: 30px;">Каталог</button>
         </div>
     </div>
     <div class="productsBLock">
         <div class="sales">
-            <div class="saleBLock" style="background-image: url('./img/sumka.png');">
-                <div class="productNameBody">
+            <div class="saleBLock">
+                <div class="productImgBlock" style="background-image: url(./img/fruits.jpg);">
+                </div>
+                <div class="productInfoBody">
                     <span class="productName">
-                        FS - QUILTED MAXI CROSS BAG
+                        Фрукты
                     </span>
+                    <span class="productSubTitle">
+                        Самый вкусный, узбекский фрукты, из солнечной Киргизии! Вай, машаллах!    
+                    </span>
+                    <button class="orangeButtonMini" style="margin-top: 30px;">Перейти</button>
                 </div>
             </div>
-            <div class="saleBLock" style="background-image: url('./img/nike_air_max_270.png');">
+            <div class="saleBLock">
+                <div class="productImgBlock" style="background-image: url(./img/dairy.jpg);">
+                </div>
+                <div class="productInfoBody">
+                    <span class="productName">
+                        Молочные продукты
+                    </span>
+                    <span class="productSubTitle">
+                        Свежие продукты, только из под быка!
+                    </span>
+                    <button class="orangeButtonMini" style="margin-top: 30px;">Перейти</button>
+                </div>
             </div>
-            <div class="saleBLock" style="background-image: url('./img/nike_airmax-red.png');">
+            <div class="saleBLock">
+                <div class="productImgBlock" style="background-image: url(./img/veggies.jpg);">
+                </div>
+                <div class="productInfoBody">
+                    <span class="productName">
+                        Овощи
+                    </span>
+                    <span class="productSubTitle">
+                        Самый вкусный, узбекский фрукты, из солнечной Киргизии! Вай, машаллах!    
+                    </span>
+                    <button class="orangeButtonMini" style="margin-top: 30px;">Перейти</button>
+                </div>
             </div>
         </div>
+        <div class="popularProductsBody">
+            <div class="popularTitleBlock">
+                <span class="popularTitle">Популярные категории</span>
+            </div>
 
+            <hr>
+            <div class="popularTitleBlock">
+                <span class="popularTitle">Топ продаж</span>
+            </div>
+            <div class="popularBLocks">
+                <div class="productBLock">
+                    <div class="productImgBlock" style="background-image: url(./img/avacado.png);">
+                    </div>
+                    <div class="productInfoBody">
+                        <span class="productName">
+                            Авокадо
+                        </span>
+                        <div>
+                            <span class="productPrice">
+                                300.00kzt
+                            </span>
+                            <span class="productOldPrice">
+                                360.00KZT
+                            </span>
+                        </div>
+
+                        <button class="orangeButtonMini" style="margin-top: 30px;">В корзину</button>
+                    </div>
+                </div>
+                <div class="productBLock">
+                    <div class="productImgBlock" style="background-image: url(./img/orange.png);">
+                    </div>
+                    <div class="productInfoBody">
+                        <span class="productName">
+                            Апельсин
+                        </span>
+                        <div>
+                            <span class="productPrice">
+                                250.00kzt
+                            </span>
+                            <span class="productOldPrice">
+                                300.00KZT
+                            </span>
+                        </div>
+
+                        <button class="orangeButtonMini" style="margin-top: 30px;">В корзину</button>
+                    </div>
+                </div>
+                <div class="productBLock">
+                    <div class="productImgBlock" style="background-image: url(./img/avacado.png);">
+                    </div>
+                    <div class="productInfoBody">
+                        <span class="productName">
+                            Авокадо
+                        </span>
+                        <div>
+                            <span class="productPrice">
+                                300.00kzt
+                            </span>
+                            <span class="productOldPrice">
+                                360.00KZT
+                            </span>
+                        </div>
+
+                        <button class="orangeButtonMini" style="margin-top: 30px;">В корзину</button>
+                    </div>
+                </div>
+                <div class="productBLock">
+                    <div class="productImgBlock" style="background-image: url(./img/avacado.png);">
+                    </div>
+                    <div class="productInfoBody">
+                        <span class="productName">
+                            Авокадо
+                        </span>
+                        <div>
+                            <span class="productPrice">
+                                300.00kzt
+                            </span>
+                            <span class="productOldPrice">
+                                360.00KZT
+                            </span>
+                        </div>
+
+                        <button class="orangeButtonMini" style="margin-top: 30px;">В корзину</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-
+    <script type="text/javascript">
+        function createTestsArray() {
+            let users = []
+            localStorage.setItem('users', JSON.stringify(users))
+            console.log('CREATED')
+        }
+    </script>
     <script src="./js/header.js"></script>
 </body>
 

@@ -1,4 +1,4 @@
-.intro{
+.intro {
     height: 650px;
     width: 100%;
     background-image: url('../img/main.png');
@@ -7,39 +7,154 @@
     align-items: center;
     padding-left: 5%;
     box-sizing: border-box;
+    background-attachment: fixed;
 }
-.introSpan{
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
+
+.introSpan {
+    font-family: 'Times New Roman';
+    font-weight: 600;
     font-size: 72px;
-    color: white;
+    color: black;
 }
-.saleBLock{
-    height: 360px;
-    width: 420px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+
+.saleBLock {
+    height: 300px;
+    width: 22%;
+    border-radius: 30px;
+    background-color: #F7F5F0;
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+    box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
 }
-.productsBLock{
+
+.productsBLock {
     position: relative;
     width: 100%;
 }
-.sales{
+
+.sales {
     width: 100%;
     padding: 0 5%;
     box-sizing: border-box;
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     position: absolute;
     top: -100px;
 }
-body{
-    height: 10000px;
+
+.productImgBlock {
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-.productName{
-    color: #223263;
+
+.productInfoBody {
+    height: 50%;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.productName {
     font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: bold;
+    color: #1F1F1F;
+}
+
+.orangeButton {
+    width: auto;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    background: #FF8126;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.orangeButtonMini {
+    width: auto;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    background: #FF8126;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.productSubTitle {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #1F1F1F;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.popularProductsBody {
+    width: 100%;
+    padding: 225px 5% 0 5%;
+    box-sizing: border-box;
+}
+
+.popularTitleBlock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.popularTitle {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    color: #1f1f1f;
+}
+
+.popularBLocks {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.productBLock {
+    height: 300px;
+    width: 22%;
+    border-radius: 30px;
+    background-color: #F7F5F0;
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+    box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+}
+
+.productPrice {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: #FF8126;
+    font-size: 18px;
+}
+
+.productOldPrice {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #656565;
+    font-size: 14px;
+    text-decoration: line-through;
 }

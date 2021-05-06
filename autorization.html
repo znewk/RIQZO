@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIQZO Registration</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+
+    <!-- jquery  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- styles  -->
+    <link rel="stylesheet" href="./css/autorization.css">
+</head>
+
+<body>
+
+    <div class="autorizationBody">
+        <div class="window">
+            <div class="titleBlock">
+                <span class="title">РЕГИСТРАЦИЯ</span>
+                <div class="changeBlock">
+                    <span class="changeButton active">РЕГИСТРАЦИЯ</span>
+                    <span class="changeButton">ВХОД</span>
+                </div>
+                <a href="index.html" class="changeButton">На главную</a>
+            </div>
+            <div class="content" id="content">
+                <div class="inputBody">
+                    <img src="./img/user.png" alt="" class="inputIcon">
+                    <input type="text" class="input" placeholder="Введите ваше имя" id="usernameInput">
+                </div>
+
+                <div class="inputBody">
+                    <img src="./img/user.png" alt="" class="inputIcon">
+                    <input type="text" class="input" placeholder="Придумайте логин" id="loginInput">
+                </div>
+                <div class="passInputs">
+                    <div class="inputBody">
+                        <img src="./img/password.png" alt="" class="inputIcon">
+                        <input type="password" class="input passInput" placeholder="Придумайте пароль" id="passwordInput">
+                    </div>
+                    <div class="inputBody">
+                        <img src="./img/password.png" alt="" class="inputIcon">
+                        <input type="password" class="input passInput" placeholder="Повторите пароль" id="repeatInput">
+                    </div>
+                </div>
+                <div class="flex">
+                    <button class="orangeButton" onclick="register()">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/header.js"></script>
+    <script src="./js/autorization.js"></script>
+</body>
+
+</html>
+
+<!-- reg 
+
+ -->

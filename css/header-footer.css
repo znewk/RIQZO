@@ -19,9 +19,11 @@ body{
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     font-size: 24px;
+    transition: 0.3s;
 }
 .logo:hover{
     cursor: pointer;
+    color: #FF8126;
 }
 .uiItem{
     font-family: 'Raleway', sans-serif;
@@ -83,7 +85,7 @@ body{
 }
 .headerItem:hover{
     cursor: pointer;
-    color: #40BFFF;
+    color: #FF8126;
 }
 .logoBody{
     padding: 10px 0;

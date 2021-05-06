@@ -1,0 +1,124 @@
+.autorizationBody {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window {
+    height: 500px;
+    width: 500px;
+    border-radius: 30px;
+    background-color: #F7F5F0;
+    -webkit-box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+    box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+}
+
+.titleBlock {
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #1f1f1f;
+    font-size: 26px;
+}
+
+.changeButton {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #1f1f1f;
+}
+
+.changeButton:hover {
+    cursor: pointer;
+}
+
+.changeBlock {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.changeButton.active {
+    color: #FF8126;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
+.passInputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    border: none;
+    width: 90%;
+    padding: 5px 10px 5px 26px;
+    background-color: transparent;
+    border-bottom: 1px solid #FF8126;
+    font-size: 18px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.inputBody {
+    margin: 10px 0;
+    width: 100%;
+    position: relative;
+}
+
+.inputIcon {
+    height: 12px;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+}
+
+.passInput {
+    width: 80%;
+}
+
+.orangeButton {
+    width: auto;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    background: #FF8126;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.flex {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+button:hover {
+    cursor: pointer;
+}
