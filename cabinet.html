@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIQZO Cabinet</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+
+    <!-- jquery  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- styles  -->
+    <link rel="stylesheet" href="./css/header-footer.css">
+    <link rel="stylesheet" href="./css/cabinet.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="userInfoHead">
+            <div class="headerNav">
+                <div class="myProfileBody">
+                    <img src="./img/profile.png" class="uiIcon" alt="">
+                    <span class="uiItem" id="profile">Личный кабинет</span>
+                </div>
+                <div class="myProfileBody">
+                    <img src="./img/cart.png" class="uiIcon" alt="">
+                    <span class="uiItem">Корзина</span>
+                </div>
+                <div class="myProfileBody">
+                    <span class="uiPrice" id="userWallet">1300.00kzt</span>
+                </div>
+                <img src="./img/search-icon.png" class="searchIcon" alt="">
+            </div>
+
+        </div>
+        <div class="mainHeader" id="mainHeader">
+            <div class="logoBody">
+                <span class="logo" onclick="location.href = 'index.html'">RIQZO</span>
+            </div>
+            <div class=" mainHeaderNav ">
+                <a href="index.html " class="headerItem ">Главная</a>
+                <a href=" " class="headerItem ">Каталог</a>
+                <a href=" " class="headerItem ">Все категории</a>
+                <a href="index.html" class="headerItem ">О нас</a>
+                <a href=" " class="headerItem ">Контакты</a>
+            </div>
+        </div>
+
+
+        <div class="cabinet">
+            <div class="userInfo">
+
+            </div>
+            <div class="userStory">
+                <div class="storyBox">
+                    <div class="sbCircle">
+                        <img src="./img/history.png" alt="" class="sbIcon">
+                    </div>
+                    <div class="sbContent">
+                        <span class="sbTitle">Покупки</span>
+                        <div><span class="sbSpan">Товаров: </span><span>0</span></div>
+                    </div>
+                </div>
+                <div class="storyBox">
+                    <div class="sbCircle">
+                        <img src="./img/shopping-cart.png" alt="" class="sbIcon">
+                    </div>
+                    <div class="sbContent">
+                        <span class="sbTitle">Корзина</span>
+                        <div>
+                            <span class="sbSpan">Товаров: </span>
+                            <span>0</span>
+                        </div>
+                        <div>
+                            <span class="sbSpan">Сумма товаров: </span>
+                            <span class="sbPrice">0.00kzt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="./js/header.js "></script>
+</body>
+
+</html>

@@ -79,6 +79,12 @@ let register = () => {
             userName: username.value,
             userLogin: login.value,
             userPassword: password.value,
+            userWallet: 0,
+            userCart: [],
+            userAdress: '',
+            userPhone: 0,
+            userGender: 'Мужской',
+            userPurchases: []
         }
         users.push(user)
         localStorage.setItem('users', JSON.stringify(users))
@@ -119,6 +125,12 @@ let loginBtn = () => {
                 userName: users[i].userName,
                 userLogin: users[i].userLogin,
                 userPassword: users[i].userPassword,
+                userWallet: users[i].userWallet,
+                userCart: users[i].userCart,
+                userAdress: users[i].userAdress,
+                userPhone: users[i].userPhone,
+                userGender: users[i].userGender,
+                userPurchases: users[i].userPurchases
             }
             localStorage.setItem('loggedUser', JSON.stringify(loggedUser))
             location.href = 'index.html'

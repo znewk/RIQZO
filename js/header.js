@@ -14,6 +14,7 @@ $(window).scroll(function() {
 let profile = document.getElementById('profile')
 if (localStorage.getItem('loggedUser') === null) {
     profile.innerText = 'Войти'
+    $('#userWallet').text(`00.00kzt`)
     profile.addEventListener('click', function() {
         location.href = 'autorization.html'
     })
@@ -21,5 +22,8 @@ if (localStorage.getItem('loggedUser') === null) {
     let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
     console.log(loggedUser)
     profile.innerText = 'Личный кабинет'
-    profile.removeEventListener('click')
+    $('#userWallet').text(`${loggedUser.userWallet}.00kzt`)
+    profile.addEventListener('click', function() {
+        location.href = 'cabinet.html'
+    })
 }
