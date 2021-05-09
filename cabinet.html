@@ -49,42 +49,128 @@
                 <a href=" " class="headerItem ">Контакты</a>
             </div>
         </div>
+    </header>
 
 
-        <div class="cabinet">
-            <div class="userInfo">
+    <div class="cabinet">
+        <div class="userInfo">
+            <div class="userNameBlock">
+                <div class="inputBody">
+                    <input type="text" name="" disabled id="userName">
+                    <img src="./img/edit.png" alt="" class="inputButton">
+                </div><br> <br>
+                <span class="inputTitle">Адрес доставки:</span>
+                <br> <br>
+                <div class="inputBody">
 
+                    <input type="text" name="" id="userAddress" class="SimpeInputs" disabled value="А. Затаевича 9/5">
+                    <img src="./img/edit.png" alt="" class="inputButton">
+                </div> <br> <br>
+                <span class="inputTitle">Телефон:</span>
+                <br> <br>
+                <div class="inputBody">
+
+                    <input type="text" name="" class="SimpeInputs" disabled id="userPhone" value="87086157439">
+                    <img src="./img/edit.png" alt="" class="inputButton">
+                </div> <br> <br>
+                <span class="inputTitle">Пол:</span>
+                <br> <br>
+                <div class="inputBody">
+                    <select name="" class="SimpeInputs" disabled id="userGender"> 
+                        <option value="Мужской">Мужской</option>
+                        <option value="Женский">Женский</option>
+                    </select>
+                    <img src="./img/edit.png" alt="" class="inputButton">
+                </div> <br> <br>
+                <span class="inputTitle">Ваш баланс:</span>
+                <br> <br>
+                <div class="inputBody">
+                    <input type="text" name="" class="SimpeInputs" id="userWalletSum" disabled value="0.00kzt">
+                    <button class="orangeButton" onclick="topUpBalance()">Пополнить</button>
+                </div> <br> <br>
             </div>
-            <div class="userStory">
-                <div class="storyBox">
-                    <div class="sbCircle">
-                        <img src="./img/history.png" alt="" class="sbIcon">
-                    </div>
-                    <div class="sbContent">
-                        <span class="sbTitle">Покупки</span>
-                        <div><span class="sbSpan">Товаров: </span><span>0</span></div>
+            <div id="confirmBlock">
+                <input type="number" name="" id="moneySum" class="SimpeInputs" placeholder="Сумма пополнения">
+                <br> <br>
+                <span id="code"></span>
+                <input type="number" id="codeInput" placeholder="Введите указанный код">
+                <br> <br>
+                <button class="orangeButton" onclick="confirmTop()">Подтвердить</button>
+            </div>
+            <br> <br>
+            <span class="logoutButton" onclick="localStorage.removeItem('loggedUser'); location.reload()">Выйти</span>
+        </div>
+        <div class="userStory">
+            <div class="storyBox">
+                <div class="sbCircle">
+                    <img src="./img/history.png" alt="" class="sbIcon">
+                </div>
+                <div class="sbContent">
+                    <span class="sbTitle">Покупки</span>
+                    <div>
+                        <span class="sbSpan">Товаров: </span>
+                        <span id="purchasesCount">0</span>
                     </div>
                 </div>
-                <div class="storyBox">
-                    <div class="sbCircle">
-                        <img src="./img/shopping-cart.png" alt="" class="sbIcon">
+            </div>
+            <div class="storyBox">
+                <div class="sbCircle">
+                    <img src="./img/shopping-cart.png" alt="" class="sbIcon">
+                </div>
+                <div class="sbContent">
+                    <span class="sbTitle">Корзина</span>
+                    <div>
+                        <span class="sbSpan">Товаров: </span>
+                        <span id="userCart">0</span>
                     </div>
-                    <div class="sbContent">
-                        <span class="sbTitle">Корзина</span>
-                        <div>
-                            <span class="sbSpan">Товаров: </span>
-                            <span>0</span>
-                        </div>
-                        <div>
-                            <span class="sbSpan">Сумма товаров: </span>
-                            <span class="sbPrice">0.00kzt</span>
-                        </div>
+                    <div>
+                        <span class="sbSpan">Сумма товаров: </span>
+                        <span class="sbPrice">0.00kzt</span>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+    <footer class="footer" style="margin-top: 100px;">
+        <div class="footerLogo">
+            <div class="logoBody">
+                <span class="logo" onclick="location.href = 'index.html'">RIQZO</span>
+            </div>
+        </div>
+        <div class="footerBLock">
+            <span class="fbTitle">
+                Навигация по сайту
+            </span>
+            <div class="fbList">
+                <a href="index.html" class="footerLink">Главная</a>
+                <a href="" class="footerLink">Каталог</a>
+                <a href="index.html" class="footerLink">О нас</a>
+                <a href="contacts.html" class="footerLink">Контакты</a>
+            </div>
+        </div>
+        <div class="footerBLock">
+            <span class="fbTitle">
+                Все категории
+            </span>
+            <div class="fbList">
+                <a class="footerLink">Фрукты</a>
+                <a class="footerLink">Молочные продукты</a>
+                <a class="footerLink">Овощи</a>
+                <a class="footerLink">Мясо</a>
+            </div>
+        </div>
+        <div class="footerBLock">
+            <span class="fbTitle">
+                Наши адреса
+            </span>
+            <div class="fbList">
+                <a class="footerLink">Нур-Султан, Затаевича 9/5</a>
+                <a class="footerLink">Алматы, Бокейхана 32</a>
+            </div>
+        </div>
+    </footer>
     <script src="./js/header.js "></script>
+    <script src="./js/cabinet.js"></script>
 </body>
 
 </html>
