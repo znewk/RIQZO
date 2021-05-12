@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIQZO Grocery Market</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+
+    <!-- jquery  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- styles  -->
+    <link rel="stylesheet" href="./css/header-footer.css">
+    <link rel="stylesheet" href="./css/catalog.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="userInfoHead">
+            <div class="headerNav">
+                <div class="myProfileBody">
+                    <img src="./img/profile.png" class="uiIcon" alt="">
+                    <span class="uiItem" id="profile">Личный кабинет</span>
+                </div>
+                <div class="myProfileBody">
+                    <img src="./img/cart.png" class="uiIcon" alt="">
+                    <span class="uiItem">Корзина</span>
+                </div>
+                <div class="myProfileBody">
+                    <span class="uiPrice" id="userWallet">1300.00kzt</span>
+                </div>
+                <img src="./img/search-icon.png" class="searchIcon" alt="">
+            </div>
+
+        </div>
+        <div class="mainHeader" id="mainHeader">
+            <div class="logoBody">
+                <span class="logo" onclick="location.href = 'index.html'">RIQZO</span>
+            </div>
+            <div class="mainHeaderNav">
+                <a href="index.html" class="headerItem">Главная</a>
+                <a href="catalog.html" class="headerItem">Каталог</a>
+                <a href="catalog.html" class="headerItem">Все категории</a>
+                <a href="index.html" class="headerItem">О нас</a>
+                <a href="contacts.html" class="headerItem">Контакты</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="catalog">
+
+        <div class="catalogHead"></div>
+
+        <div class="catalogArea">
+            <div class="filterBody">
+                
+            </div>
+
+            <div class="productsBody">
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footerLogo">
+            <div class="logoBody">
+                <span class="logo" onclick="location.href = 'index.html'">RIQZO</span>
+            </div>
+        </div>
+        <div class="footerBLock">
+            <span class="fbTitle">
+                Навигация по сайту
+            </span>
+            <div class="fbList">
+                <a href="index.html" class="footerLink">Главная</a>
+                <a href="catalog.html" class="footerLink">Каталог</a>
+                <a href="index.html" class="footerLink">О нас</a>
+                <a href="contacts.html" class="footerLink">Контакты</a>
+            </div>
+        </div>
+        <div class="footerBLock">
+            <span class="fbTitle">
+                Все категории
+            </span>
+            <div class="fbList">
+                <a class="footerLink">Фрукты</a>
+                <a class="footerLink">Молочные продукты</a>
+                <a class="footerLink">Овощи</a>
+                <a class="footerLink">Мясо</a>
+            </div>
+        </div>
+        <div class="footerBLock">
+            <span class="fbTitle">
+                Наши адреса
+            </span>
+            <div class="fbList">
+                <a class="footerLink">Нур-Султан, Затаевича 9/5</a>
+                <a class="footerLink">Алматы, Бокейхана 32</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/header.js"></script>
+</body>
+
+</html>
