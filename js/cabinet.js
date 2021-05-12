@@ -136,12 +136,14 @@ if (localStorage.getItem('loggedUser') === null) {
 
     function topUpBalance() {
         if (cbOpen === false) {
+            $('#topUpBalanceBtn').text('Скрыть')
             let codeF = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
             code = codeF;
             $('#code').text(code)
             $('#confirmBlock').slideDown()
             cbOpen = true;
         } else {
+            $('#topUpBalanceBtn').text('Пополнить')
             $('#confirmBlock').slideUp()
             cbOpen = false;
         }

@@ -158,3 +158,40 @@ button:hover {
     font-size: 14px;
     text-decoration: line-through;
 }
+
+.whyUs {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 5%;
+}
+
+.whyUsBlocks {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+.whyUsBlock {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whyUsBlockTitle {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #FF8126;
+}
+
+.whyUsText {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+.whyUsBlockImage {
+    height: 128px;
+}

@@ -44,16 +44,14 @@
             <div class="mainHeaderNav">
                 <a href="index.html" class="headerItem">Главная</a>
                 <a href="" class="headerItem">Каталог</a>
-                <a href="" class="headerItem">Все категории</a>
+                <a href="catalog.html" class="headerItem">Все категории</a>
                 <a href="index.html" class="headerItem">О нас</a>
-                <a href="" class="headerItem">Контакты</a>
+                <a href="contacts.html" class="headerItem">Контакты</a>
             </div>
         </div>
     </header>
     <button onclick="createTestsArray()" style="position: fixed; right: 10px; bottom: 10px; z-index: 99999;">Создать
         массив</button>
-    <button onclick="localStorage.removeItem('loggedUser')" style="position: fixed; right: 200px; bottom: 10px; z-index: 99999;">Выйтк</button>
-
     <div class="intro">
         <div style="display: flex; flex-direction: column; justify-content: flex-start;">
             <span class="introSpan">
@@ -64,7 +62,7 @@
             font-size: 24px;">
                 Топ 1 на рынке Казахстана
             </span>
-            <button class="orangeButton" style="width: 50%; margin-top: 30px;">Каталог</button>
+            <button onclick="location.href = 'catalog.html'" class="orangeButton" style="width: 50%; margin-top: 30px;">Каталог</button>
         </div>
     </div>
     <div class="productsBLock">
@@ -115,8 +113,8 @@
             </div>
 
             <hr>
-            <div class="popularTitleBlock">
-                <span class="popularTitle">Топ продаж</span>
+            <div class="popularTitleBlock" style="margin-top: 30px;">
+                <span class="popularTitle">ТОП <span style="color: #FF8126;">ПРОДАЖ</span></span>
             </div>
             <div class="popularBLocks">
                 <div class="productBLock">
@@ -199,6 +197,31 @@
             </div>
         </div>
     </div>
+
+    <div class="whyUs">
+        <div class="popularTitleBlock" style="margin-top: 30px;">
+            <span class="popularTitle">Почему лучше выбрать <span style="color: #FF8126;">RIQZO</span>?</span>
+        </div>
+
+        <div class="whyUsBlocks">
+            <div class="whyUsBlock">
+                <img src="./img/diet.png" class="whyUsBlockImage" alt="">
+                <span class="whyUsBlockTitle">Только свежие продукты</span>
+                <span class="whyUsText">Все продукты исключительно первой свжести!</span>
+            </div>
+            <div class="whyUsBlock">
+                <img src="./img/patient.png" class="whyUsBlockImage" alt="">
+                <span class="whyUsBlockTitle">Быстрая доставка</span><span class="whyUsText">Мгновенно доставим продукты к вашим дверям.</span>
+            </div>
+            <div class="whyUsBlock">
+                <img src="./img/laugh.png" class="whyUsBlockImage" alt="">
+                <span class="whyUsBlockTitle">Отзывчивая тех. поддержка</span>
+                <span class="whyUsText">Наши операторы ответят на все ваши вопросы!</span>
+            </div>
+        </div>
+
+    </div>
+
     <footer class="footer">
         <div class="footerLogo">
             <div class="logoBody">
@@ -211,7 +234,7 @@
             </span>
             <div class="fbList">
                 <a href="index.html" class="footerLink">Главная</a>
-                <a href="" class="footerLink">Каталог</a>
+                <a href="catalog.html" class="footerLink">Каталог</a>
                 <a href="index.html" class="footerLink">О нас</a>
                 <a href="contacts.html" class="footerLink">Контакты</a>
             </div>
