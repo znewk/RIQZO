@@ -195,3 +195,14 @@ button:hover {
 .whyUsBlockImage {
     height: 128px;
 }
+
+.subBlock {
+    width: 100%;
+    padding: 0 5%;
+    background-position: center;
+    height: 350px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-image: url('../img/blue_bg.png');
+    margin-top: 30px;
+}
