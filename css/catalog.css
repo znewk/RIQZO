@@ -1,0 +1,97 @@
+.catalog{
+    width: 100%;
+    background-color: #F7F5F0;
+}
+.catalogArea{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.filterBody{
+    width: 20%;
+    background-color: #FF8126;
+    height: 69.5vh;
+    border-radius: 0 30px 30px 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.filterTitle{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    font-size: 24px;
+}
+
+#productsBody{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.item{
+    width: 250px;
+    height: auto;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #e2e1df;
+}
+.itemImageBody{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.itemImage{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    height: 150px;
+}
+.itemContent{
+    width: 100%;
+    padding: 10px;
+
+}
+.itemName{
+    color: #1F1F1F;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+.itemPrice{
+    color: #FF8126;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+.itemPriceOld{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #656565;
+    font-size: 18px;
+    text-decoration: line-through;
+}
+button:hover{
+    cursor: pointer;
+}
+.addToCartBtn{
+    font-family: 'Raleway', sans-serif;
+    border: none;
+    background-color: #FF8126;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: white;
+    transition: 0.3s;
+}
+.addToCartBtn:active{
+    transform: scale(0.9);
+}
+.addToCartBtn:hover{
+    background-color: #fa6800;
+}
+.itemCategory{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #656565;
+    font-size: 12px;
+}
