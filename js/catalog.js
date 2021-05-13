@@ -103,28 +103,80 @@ itemsArray = [
 ]
 
 for(i=0;i<itemsArray.length; i++){
-    $('#productsBody').append(`
-    <div class="item">
-    <div class="itemImageBody">
-        <img src="./img/${itemsArray[i]['image']}" alt="" class="itemImage">
-    </div>
-    <div class="itemContent">
-        <div>
-            <span class="itemName">${itemsArray[i]['name']}</span> <span class="itemCategory">${itemsArray[i]['category']}</span>
-            <div>
-                <span class="itemPrice">${itemsArray[i]['price']}.00kzt</span> <span class="itemPriceOld">${itemsArray[i]['price'] + 50}.00kzt</span>
+            $('#productsBody').append(`
+            <div class="item">
+            <div class="itemImageBody">
+                <img src="./img/${itemsArray[i]['image']}" alt="" class="itemImage">
+            </div>
+            <div class="itemContent">
+                <div>
+                    <span class="itemName">${itemsArray[i]['name']}</span> <span class="itemCategory">${itemsArray[i]['category']}</span>
+                    <div>
+                        <span class="itemPrice">${itemsArray[i]['price']}.00kzt</span> <span class="itemPriceOld">${itemsArray[i]['price'] + 50}.00kzt</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="addToCartBtn">Добавить в козину</button>
+                    <button class="addToCartBtn" onclick='openModal("${itemsArray[i]['name']}")'>Описание</button>
+                </div>
             </div>
         </div>
-        <div>
-            <button class="addToCartBtn">Добавить в козину</button>
-            <button class="addToCartBtn" onclick='openModal("${itemsArray[i]['name']}")'>Описание</button>
+        `)
+    }    
+
+function showItems(){
+    $('#productsBody').empty()
+    let categoryItems = localStorage.getItem('category');
+
+    if(categoryItems === 'Все'){
+        for(i=0;i<itemsArray.length; i++){
+            $('#productsBody').append(`
+            <div class="item">
+            <div class="itemImageBody">
+                <img src="./img/${itemsArray[i]['image']}" alt="" class="itemImage">
+            </div>
+            <div class="itemContent">
+                <div>
+                    <span class="itemName">${itemsArray[i]['name']}</span> <span class="itemCategory">${itemsArray[i]['category']}</span>
+                    <div>
+                        <span class="itemPrice">${itemsArray[i]['price']}.00kzt</span> <span class="itemPriceOld">${itemsArray[i]['price'] + 50}.00kzt</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="addToCartBtn">Добавить в козину</button>
+                    <button class="addToCartBtn" onclick='openModal("${itemsArray[i]['name']}")'>Описание</button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-    `)
+        `)
+    } 
+    } else{
+        for(i=0;i<itemsArray.length; i++){
+            if(localStorage.getItem('category') === itemsArray[i]['category']){
+                $('#productsBody').append(`
+            <div class="item">
+            <div class="itemImageBody">
+                <img src="./img/${itemsArray[i]['image']}" alt="" class="itemImage">
+            </div>
+            <div class="itemContent">
+                <div>
+                    <span class="itemName">${itemsArray[i]['name']}</span> <span class="itemCategory">${itemsArray[i]['category']}</span>
+                    <div>
+                        <span class="itemPrice">${itemsArray[i]['price']}.00kzt</span> <span class="itemPriceOld">${itemsArray[i]['price'] + 50}.00kzt</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="addToCartBtn">Добавить в козину</button>
+                    <button class="addToCartBtn" onclick='openModal("${itemsArray[i]['name']}")'>Описание</button>
+                </div>
+            </div>
+        </div>
+        `)
+            }
+        }
+    }
 }
-
-
+showItems()
 let modal = $('#modalBody');
 modal.hide()
 $('#modal').click(function(){
