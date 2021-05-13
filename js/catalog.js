@@ -3,6 +3,7 @@ let itemsArray = []
 class Item{
     #name;
     #category;
+    #unitrev;
     #energy;
     #proteine;
     #fat;
@@ -12,6 +13,7 @@ class Item{
 
     constructor(newName, 
         newCategory, 
+        newUnitRev,
         newEnergy, 
         newProtiene, 
         newFat, 
@@ -20,7 +22,9 @@ class Item{
         newImage){
         this.#name = newName;
         this.#category = newCategory;
+        this.#unitrev = newUnitRev
         this.#energy = newEnergy;
+        this.#proteine = newProtiene;
         this.#fat = newFat;
         this.#carbohydrate = newCarbohydrate;
         this.#price = newPrice
@@ -38,6 +42,12 @@ class Item{
     }
     set category(e){
         this.#category = e;
+    }
+    get unitrev(){
+        return this.#unitrev;
+    }
+    set unitrev(e){
+        this.#unitrev = e;
     }
     get energy(){
         return this.#energy;
@@ -78,25 +88,162 @@ class Item{
 }
 
 itemsArray = [
-    new Item('Авакадо', 'Фрукты', 140, 4, 2, 16, 300, 'avacado.png'),
-    new Item('Апельсин', 'Фрукты', 200, 4, 2, 16, 450, 'orange.png'),
-    new Item('Яйцо куриное', 'Мясо', 100, 4, 2, 16, 290, 'dairy.jpg')
+    new Item('Авакадо', 'Фрукты', 'кг', 140, 4, 2, 16, 300, 'avacado.png'),
+    new Item('Апельсин', 'Фрукты', 'кг', 200, 4, 2, 16, 450, 'orange.png'),
+    new Item('Яйцо куриное', 'Мясо','шт', 100, 4, 2, 16, 290, 'dairy.jpg'),
+    new Item('Говядина', 'Мясо','кг', 100, 4, 2, 16, 290, 'beef.jpg'),
+    new Item('Баранина', 'Мясо','кг', 100, 4, 2, 16, 290, 'mutton.jpg'),
+    new Item('Ход-дог', 'Мясо','кг', 100, 4, 2, 16, 290, 'hotdog.png'),
+    new Item('Сливочное масло', 'Молочные продукты','кг', 130, 4, 2, 16, 290, 'butter.jpg'),
+    new Item('Молоко RIZQO', 'Молочные продукты','л', 130, 4, 2, 16, 210, 'milk.jpg'),
+    new Item('Помидор', 'Овощи','кг', 130, 4, 2, 16, 290, 'tomat.jpg'),
+    new Item('Огурец', 'Овощи','кг', 130, 4, 2, 16, 390, 'cucumber.jpg'),
+    new Item('Арбуз', 'Ягоды','кг', 130, 4, 2, 16, 390, 'watermelon.jpg'),
+    new Item('Черешня', 'Ягоды','кг', 130, 4, 2, 16, 390, 'sweetcherry.jpg'),
 ]
 
 for(i=0;i<itemsArray.length; i++){
     $('#productsBody').append(`
     <div class="item">
-        <div class="itemImageBody">
-            <img src="./img/${itemsArray[i]['image']}" alt="" class="itemImage">
-        </div>
-        <div class="itemContent">
+    <div class="itemImageBody">
+        <img src="./img/${itemsArray[i]['image']}" alt="" class="itemImage">
+    </div>
+    <div class="itemContent">
+        <div>
             <span class="itemName">${itemsArray[i]['name']}</span> <span class="itemCategory">${itemsArray[i]['category']}</span>
             <div>
                 <span class="itemPrice">${itemsArray[i]['price']}.00kzt</span> <span class="itemPriceOld">${itemsArray[i]['price'] + 50}.00kzt</span>
             </div>
+        </div>
+        <div>
             <button class="addToCartBtn">Добавить в козину</button>
-            <button class="addToCartBtn">Подробнее</button>
+            <button class="addToCartBtn" onclick='openModal("${itemsArray[i]['name']}")'>Описание</button>
+        </div>
+    </div>
+</div>
+    `)
+}
+
+
+let modal = $('#modalBody');
+modal.hide()
+$('#modal').click(function(){
+    modal.fadeOut('fast')
+})
+
+function openModal(itemName){
+    let currentItem = null;
+    for(i=0;i<itemsArray.length; i++){
+        if(itemsArray[i]['name'] === itemName){
+            currentItem = new Item(itemsArray[i].name, 
+                itemsArray[i].category, 
+                itemsArray[i].unitrev,
+                itemsArray[i].energy, 
+                itemsArray[i].proteine, 
+                itemsArray[i].fat, 
+                itemsArray[i].carbohydrate, 
+                itemsArray[i].price,
+                itemsArray[i].image)
+        }
+    }
+    $('#modal').empty()
+    $('#modal').append(`
+    <div class="modalContent">
+        <div class="modalHead">
+            <span class="modalHeadTitle">${currentItem.category}</span>
+            <span id="exitModal">x</span>
+        </div>
+        <div class="modalImageBody">
+            <img src="./img/${currentItem.image}" class="modalImage" alt="">
+        </div>
+        <div class="modalContentInfo">
+            <div class="modalContentInfoHead">
+                <span class="modalContentInfoTitle">
+                ${currentItem.name}
+                </span>
+                <span class="modalContentInfoCategory">
+                ${currentItem.category}
+                </span>
+            </div>
+            <div class="modalContentInfoFooter">
+                <span class="modalPrice">${currentItem.price}.00kzt/кг</span>
+                <div class="descLine">
+                    <span class="descText">Категория</span>
+                    <span class="descText">${currentItem.category}</span>
+                </div>
+                <div class="descLine">
+                    <span class="descText">Энергия (ккал)</span>
+                    <span class="descText">${currentItem.energy}</span>
+                </div>
+                <div class="descLine">
+                    <span class="descText">Белок (г)</span>
+                    <span class="descText">${currentItem.proteine}</span>
+                </div>
+                <div class="descLine">
+                    <span class="descText">Жиры (г)</span>
+                    <span class="descText">${currentItem.fat}</span>
+                </div>
+                <div class="descLine">
+                    <span class="descText">Углеводы (г)</span>
+                    <span class="descText">${currentItem.carbohydrate}</span>
+                </div>
+                <button class="modalAddToCart">В корзину</button>
+            </div>
         </div>
     </div>
     `)
+    modal.fadeIn('fast')
+}
+
+function filter(){
+    let categorySelet = document.getElementById('categorySelet')
+    $('#productsBody').empty()
+
+    if(categorySelet.value === 'Все'){
+        for(i=0;i<itemsArray.length; i++){
+            $('#productsBody').append(`
+            <div class="item">
+            <div class="itemImageBody">
+                <img src="./img/${itemsArray[i]['image']}" alt="" class="itemImage">
+            </div>
+            <div class="itemContent">
+                <div>
+                    <span class="itemName">${itemsArray[i]['name']}</span> <span class="itemCategory">${itemsArray[i]['category']}</span>
+                    <div>
+                        <span class="itemPrice">${itemsArray[i]['price']}.00kzt</span> <span class="itemPriceOld">${itemsArray[i]['price'] + 50}.00kzt</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="addToCartBtn">Добавить в козину</button>
+                    <button class="addToCartBtn" onclick='openModal("${itemsArray[i]['name']}")'>Описание</button>
+                </div>
+            </div>
+        </div>
+            `)
+        }
+    } else{
+        for(i=0;i<itemsArray.length;i++){
+            if(itemsArray[i].category === categorySelet.value){
+                $('#productsBody').append(`
+        <div class="item">
+        <div class="itemImageBody">
+            <img src="./img/${itemsArray[i]['image']}" alt="" class="itemImage">
+        </div>
+        <div class="itemContent">
+            <div>
+                <span class="itemName">${itemsArray[i]['name']}</span> <span class="itemCategory">${itemsArray[i]['category']}</span>
+                <div>
+                    <span class="itemPrice">${itemsArray[i]['price']}.00kzt</span> <span class="itemPriceOld">${itemsArray[i]['price'] + 50}.00kzt</span>
+                </div>
+            </div>
+            <div>
+                <button class="addToCartBtn">Добавить в козину</button>
+                <button class="addToCartBtn" onclick='openModal("${itemsArray[i]['name']}")'>Описание</button>
+            </div>
+        </div>
+    </div>
+        `)
+            }
+        }
+    }
 }

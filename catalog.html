@@ -9,7 +9,8 @@
     <link rel="icon" type="image/png" href="./img/favicon.png">
 
     <!-- jquery  -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- fonts  -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
@@ -19,6 +20,55 @@
 </head>
 
 <body>
+
+    <div id="modalBody">
+        <div id="modal">
+            <div class="modalContent">
+                <div class="modalHead">
+                    <span class="modalHeadTitle">Мясо</span>
+                    <span id="exitModal">x</span>
+                </div>
+                <div class="modalImageBody">
+                    <img src="./img/butter.jpg" class="modalImage" alt="">
+                </div>
+                <div class="modalContentInfo">
+                    <div class="modalContentInfoHead">
+                        <span class="modalContentInfoTitle">
+                            Сливочное масло
+                        </span>
+                        <span class="modalContentInfoCategory">
+                            Молочные продукты
+                        </span>
+                    </div>
+                    <div class="modalContentInfoFooter">
+                        <span class="modalPrice">300.00kzt/кг</span>
+                        <div class="descLine">
+                            <span class="descText">Категория</span>
+                            <span class="descText">Молочные продукты</span>
+                        </div>
+                        <div class="descLine">
+                            <span class="descText">Энергия (ккал)</span>
+                            <span class="descText">140</span>
+                        </div>
+                        <div class="descLine">
+                            <span class="descText">Белок (г)</span>
+                            <span class="descText">4</span>
+                        </div>
+                        <div class="descLine">
+                            <span class="descText">Жиры (г)</span>
+                            <span class="descText">10</span>
+                        </div>
+                        <div class="descLine">
+                            <span class="descText">Углеводы (г)</span>
+                            <span class="descText">15</span>
+                        </div>
+                        <button class="modalAddToCart">В корзину</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="header">
         <div class="userInfoHead">
             <div class="headerNav">
@@ -63,7 +113,19 @@
                     <span>Фильтр</span>
                 </div>
                 <div class="filterItems">
-
+                    <div class="filterItem">
+                        <span class="filterItemSpan">Категория</span>
+                        <select class="filterSelect" id="categorySelet">
+                            <option value="Все">Все</option>
+                            <option value="Фрукты">Фрукты</option>
+                            <option value="Овощи">Овощи</option>
+                            <option value="Молочные продукты">Молочные продукты</option>
+                            <option value="Ягоды">Ягоды</option>
+                        </select>
+                    </div>
+                    <div class="filterItem">
+                        <button onclick="filter()" class="filterSelect" style="margin-top: 10px;">Применить фильтр</button>
+                    </div>
                 </div>
             </div>
 
@@ -73,12 +135,16 @@
                         <img src="./img/avacado.png" alt="" class="itemImage">
                     </div>
                     <div class="itemContent">
-                        <span class="itemName">Авакадо</span> <span class="itemCategory">Фрукты</span>
                         <div>
-                            <span class="itemPrice">300.00kzt</span> <span class="itemPriceOld">300.00kzt</span>
+                            <span class="itemName">Авакадо</span> <span class="itemCategory">Фрукты</span>
+                            <div>
+                                <span class="itemPrice">300.00kzt</span> <span class="itemPriceOld">300.00kzt</span>
+                            </div>
                         </div>
-                        <button class="addToCartBtn">Добавить в козину</button>
-                        <button class="addToCartBtn">Описание</button>
+                        <div>
+                            <button class="addToCartBtn">Добавить в козину</button>
+                            <button class="addToCartBtn">Описание</button>
+                        </div>
                     </div>
                 </div> -->
             </div>
