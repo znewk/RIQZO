@@ -9,7 +9,8 @@
     <link rel="icon" type="image/png" href="./img/favicon.png">
 
     <!-- jquery  -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- fonts  -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@
                 </div>
                 <div class="myProfileBody">
                     <img src="./img/cart.png" class="uiIcon" alt="">
-                    <span class="uiItem">Корзина</span>
+                    <span class="uiItem" onclick="openCart()">Корзина</span>
                 </div>
                 <div class="myProfileBody">
                     <span class="uiPrice" id="userWallet">1300.00kzt</span>
@@ -41,12 +42,12 @@
             <div class="logoBody">
                 <span class="logo" onclick="location.href = 'index.html'">RIQZO</span>
             </div>
-            <div class=" mainHeaderNav ">
-                <a href="index.html " class="headerItem ">Главная</a>
-                <a href=" " class="headerItem ">Каталог</a>
-                <a href=" " class="headerItem ">Все категории</a>
-                <a href="index.html" class="headerItem ">О нас</a>
-                <a href=" " class="headerItem ">Контакты</a>
+            <div class="mainHeaderNav">
+                <a href="index.html" class="headerItem">Главная</a>
+                <a onclick="categoryAll()" class="headerItem">Каталог</a>
+                <a onclick="categoryAll()" class="headerItem">Все категории</a>
+                <a href="index.html" class="headerItem">О нас</a>
+                <a href="contacts.html" class="headerItem">Контакты</a>
             </div>
         </div>
     </header>
@@ -76,7 +77,7 @@
                 <span class="inputTitle">Пол:</span>
                 <br> <br>
                 <div class="inputBody">
-                    <select name="" class="SimpeInputs" disabled id="userGender"> 
+                    <select name="" class="SimpeInputs" disabled id="userGender">
                         <option value="Мужской">Мужской</option>
                         <option value="Женский">Женский</option>
                     </select>
@@ -117,7 +118,7 @@
                 <div class="sbCircle">
                     <img src="./img/shopping-cart.png" alt="" class="sbIcon">
                 </div>
-                <div class="sbContent">
+                <div class="sbContent" onclick="openCart()">
                     <span class="sbTitle">Корзина</span>
                     <div>
                         <span class="sbSpan">Товаров: </span>
@@ -125,13 +126,13 @@
                     </div>
                     <div>
                         <span class="sbSpan">Сумма товаров: </span>
-                        <span class="sbPrice">0.00kzt</span>
+                        <span class="sbPrice" id="sbPrice">0.00kzt</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer class="footer" style="margin-top: 100px;">
+    <footer class="footer" style="margin-top: 79px;">
         <div class="footerLogo">
             <div class="logoBody">
                 <span class="logo" onclick="location.href = 'index.html'">RIQZO</span>
@@ -143,7 +144,7 @@
             </span>
             <div class="fbList">
                 <a href="index.html" class="footerLink">Главная</a>
-                <a href="" class="footerLink">Каталог</a>
+                <a onclick="categoryAll()" class="footerLink">Каталог</a>
                 <a href="index.html" class="footerLink">О нас</a>
                 <a href="contacts.html" class="footerLink">Контакты</a>
             </div>
@@ -153,10 +154,11 @@
                 Все категории
             </span>
             <div class="fbList">
-                <a class="footerLink">Фрукты</a>
-                <a class="footerLink">Молочные продукты</a>
-                <a class="footerLink">Овощи</a>
-                <a class="footerLink">Мясо</a>
+                <a class="footerLink" onclick="categoryFruits()">Фрукты</a>
+                <a class="footerLink" onclick="categoryMilk()">Молочные продукты</a>
+                <a class="footerLink" onclick="categoryVeggies()">Овощи</a>
+                <a class="footerLink" onclick="categoryMeat()">Мясо</a>
+                <a class="footerLink" onclick="categoryBerry()">Ягоды</a>
             </div>
         </div>
         <div class="footerBLock">

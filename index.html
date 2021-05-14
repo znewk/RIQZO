@@ -28,7 +28,7 @@
                 </div>
                 <div class="myProfileBody">
                     <img src="./img/cart.png" class="uiIcon" alt="">
-                    <span class="uiItem">Корзина</span>
+                    <span class="uiItem" onclick="openCart()">Корзина</span>
                 </div>
                 <div class="myProfileBody">
                     <span class="uiPrice" id="userWallet">1300.00kzt</span>
@@ -77,7 +77,7 @@
                     <span class="productSubTitle">
                         Самый вкусный, узбекский фрукты, из солнечной Киргизии! Вай, машаллах!    
                     </span>
-                    <button class="orangeButtonMini" style="margin-top: 30px;">Перейти</button>
+                    <button class="orangeButtonMini" onclick="categoryFruits()" style="margin-top: 30px;">Перейти</button>
                 </div>
             </div>
             <div class="saleBLock">
@@ -90,11 +90,11 @@
                     <span class="productSubTitle">
                         Свежие продукты, только из под быка!
                     </span>
-                    <button class="orangeButtonMini" style="margin-top: 30px;">Перейти</button>
+                    <button class="orangeButtonMini" onclick="categoryMilk()" style="margin-top: 30px;">Перейти</button>
                 </div>
             </div>
             <div class="saleBLock">
-                <div class="productImgBlock" style="background-image: url(./img/veggies.jpg);">
+                <div class="productImgBlock"  style="background-image: url(./img/veggies.jpg);">
                 </div>
                 <div class="productInfoBody">
                     <span class="productName">
@@ -103,7 +103,7 @@
                     <span class="productSubTitle">
                         Самый вкусный, узбекский фрукты, из солнечной Киргизии! Вай, машаллах!    
                     </span>
-                    <button class="orangeButtonMini" style="margin-top: 30px;">Перейти</button>
+                    <button class="orangeButtonMini" onclick="categoryVeggies()" style="margin-top: 30px;">Перейти</button>
                 </div>
             </div>
         </div>
@@ -251,7 +251,7 @@
                 <a class="footerLink" onclick="categoryMilk()">Молочные продукты</a>
                 <a class="footerLink" onclick="categoryVeggies()">Овощи</a>
                 <a class="footerLink" onclick="categoryMeat()">Мясо</a>
-                <a class="footerLink" onclick="categoryMilk()">Ягоды</a>
+                <a class="footerLink" onclick="categoryBerry()">Ягоды</a>
             </div>
         </div>
         <div class="footerBLock">

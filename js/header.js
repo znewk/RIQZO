@@ -48,3 +48,16 @@ function categoryMilk(){
     localStorage.setItem('category', 'Молочные продукты')
     location.href = 'catalog.html'
 }
+function categoryBerry(){
+    localStorage.setItem('category', 'Ягоды')
+    location.href = 'catalog.html'
+}
+
+function openCart(){
+    if (localStorage.getItem('loggedUser') === null) {
+        alert('Вы не авторизованы')
+        location.href = 'autorization.html'
+    } else {
+        location.href = 'cart.html'
+    }
+}
