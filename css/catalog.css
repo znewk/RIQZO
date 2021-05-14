@@ -1,0 +1,240 @@
+.catalog{
+    width: 100%;
+    background-color: #F7F5F0;
+}
+body{
+    overflow: hidden;
+}
+.catalogArea{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.filterBody{
+    width: 20%;
+    background-color: #FF8126;
+    height: 69.5vh;
+    border-radius: 0 30px 30px 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.filterTitle{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    font-size: 24px;
+}
+
+#productsBody{
+    height: 69.5vh;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    overflow-y: scroll  ;
+}
+.item{
+    width: 250px;
+    height: 275px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #e2e1df;
+    -webkit-box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+    box-shadow: 0px 2px 5px 2px rgba(34, 60, 80, 0.1);
+}
+.itemImageBody{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    height: 150px;
+    overflow: hidden;
+}
+.itemImage{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    height: 100%;
+    transition: 0.5s ease-out;
+}
+.itemContent{
+    width: 100%;
+    height: 125px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.itemName{
+    color: #1F1F1F;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+.item:hover > .itemImageBody > .itemImage{
+    transform: scale(1.1);
+}
+
+.itemPrice{
+    color: #FF8126;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+.itemPriceOld{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #656565;
+    font-size: 18px;
+    text-decoration: line-through;
+}
+button:hover{
+    cursor: pointer;
+}
+.addToCartBtn{
+    font-family: 'Raleway', sans-serif;
+    border: none;
+    background-color: #FF8126;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: white;
+    transition: 0.3s;
+}
+.addToCartBtn:active{
+    transform: scale(0.9);
+}
+.addToCartBtn:hover{
+    background-color: #fa6800;
+}
+.itemCategory{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #656565;
+    font-size: 12px;
+}
+#modalBody{
+    position: absolute;
+    z-index: 100000000;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#modal{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalContent{
+    position: relative;
+    height: 600px;
+    width: 500px;
+    background-color: #FF8126;
+    border-radius: 20px;
+}
+.modalHead{
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#exitModal{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+.modalHeadTitle{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: white;
+}
+.modalImageBody{
+    height: 250px;
+    width: 100%;
+}
+.modalImage{
+    height: 100%;
+    width: 100%;
+}
+.modalContentInfo{
+    padding: 20px;
+    box-sizing: border-box;
+}
+.modalContentInfoTitle{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+}
+.modalContentInfoCategory{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #d8d8d8;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.modalContentInfoHead{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+.modalPrice{
+    color: #25578a;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+}
+.descLine{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.descText{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.modalAddToCart{
+    border: none;
+    background-color: white;
+    color: #FF8126;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.filterSelect{
+    border: none;
+    background-color: white;
+    padding: 5px 10px;
+    color: #FF8126;
+    border-radius: 5px;
+    cursor: pointer;
+}
+select:focus{
+    outline: none;
+}
+.filterItems{
+    margin-top: 30px;
+}
+.filterItem{
+    display: flex;
+    justify-content: space-between;
+}
+.filterItemSpan{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: white;
+}

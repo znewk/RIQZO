@@ -43,8 +43,8 @@
             </div>
             <div class="mainHeaderNav">
                 <a href="index.html" class="headerItem">Главная</a>
-                <a href="" class="headerItem">Каталог</a>
-                <a href="catalog.html" class="headerItem">Все категории</a>
+                <a onclick="categoryAll()" class="headerItem">Каталог</a>
+                <a onclick="categoryAll()" class="headerItem">Все категории</a>
                 <a href="index.html" class="headerItem">О нас</a>
                 <a href="contacts.html" class="headerItem">Контакты</a>
             </div>
@@ -237,7 +237,7 @@
             </span>
             <div class="fbList">
                 <a href="index.html" class="footerLink">Главная</a>
-                <a href="catalog.html" class="footerLink">Каталог</a>
+                <a onclick="categoryAll()" class="footerLink">Каталог</a>
                 <a href="index.html" class="footerLink">О нас</a>
                 <a href="contacts.html" class="footerLink">Контакты</a>
             </div>
@@ -247,10 +247,11 @@
                 Все категории
             </span>
             <div class="fbList">
-                <a class="footerLink">Фрукты</a>
-                <a class="footerLink">Молочные продукты</a>
-                <a class="footerLink">Овощи</a>
-                <a class="footerLink">Мясо</a>
+                <a class="footerLink" onclick="categoryFruits()">Фрукты</a>
+                <a class="footerLink" onclick="categoryMilk()">Молочные продукты</a>
+                <a class="footerLink" onclick="categoryVeggies()">Овощи</a>
+                <a class="footerLink" onclick="categoryMeat()">Мясо</a>
+                <a class="footerLink" onclick="categoryMilk()">Ягоды</a>
             </div>
         </div>
         <div class="footerBLock">
