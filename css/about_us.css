@@ -1,0 +1,114 @@
+.text{
+    display: block;
+    width: 100%;
+}
+h1{
+    margin-left: 100px;
+    font-size: 35px;
+    font-weight: 1200;
+}
+
+.text_img{
+    display: flex;
+    /* flex-wrap: wrap; */
+    background-color: #0dbbda6e;
+    line-height: 1.5;
+}
+.texts{
+    width: 50%;
+    font-size: 28px;
+    font-weight: 900;
+    padding: 60px;
+    
+}
+p.matin{
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+}
+.image{
+    width: 800px;
+    height: 500px;
+    width: 40%;
+}
+img{
+    width: 830px;
+    height: 500px;
+   
+}
+.model_kompetencii{
+    width: 100%;
+    line-height: 1.5;
+}
+h2{
+    margin-left: 100px;
+    font-weight: bold;
+    font-size: 35px;
+}
+.tekst{
+    background-color: #ffcfcf;
+    font-size: 28px;
+    font-weight: 900;
+    padding: 60px;
+}
+
+
+.missionBl .trainings {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color:rgb(238, 238, 238);
+}
+
+.missionBl .training {
+    position: relative;
+    width: 20%;
+    height: 275px;
+}
+.missionBl .trainingPreview {
+    overflow-wrap: break-word;
+    position: absolute;
+    text-align: center;
+    padding: 50px 0px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    color: #888;
+}
+.missionBl .trainingInfo {
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    padding: 40px;
+    overflow-wrap: break-word;
+    background-color: #ffcfcf;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s ease;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+img.abc{
+    width: 123px;
+    height: 123px;
+}
+*{
+    box-sizing: border-box;
+}
+
+.sContainer {
+    margin: 0 auto;
+    padding: 10px 0;
+}
+.missionBl .ourValues {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.missionBl .ourValue {
+    text-align: center;
+    margin-bottom: 50px;
+    width: 27%;
+}

@@ -1,0 +1,59 @@
+.container{
+    height: 650px;
+    width: 100%;
+    background-image: url(../img/main.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    box-sizing: border-box;
+    background-attachment: fixed;
+}
+
+.form{
+    border-radius: 30px;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(226, 32, 32, 0.555);
+}
+
+.title{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.content{
+    text-align: center;
+    padding-top: 140px;
+    margin-left: 100px;
+    display: block;
+    height: 100%;
+    width: 90%;
+    margin-bottom: 20px;
+}
+.name{
+    border-radius: 15px;
+    display: block;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.phone{
+    border-radius: 15px;
+    display: block;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 40px;
+}
+
+.submit{
+    background-color:rgba(16, 219, 16, 0.678);
+    border-radius: 15px;
+    display: block;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 100px;
+}

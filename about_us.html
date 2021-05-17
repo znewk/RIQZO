@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIQZO Grocery Market</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+
+    <!-- jquery  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- styles  -->
+    <link rel="stylesheet" href="./css/header-footer.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/about_us.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="userInfoHead">
+            <div class="headerNav">
+                <div class="myProfileBody">
+                    <img src="./img/profile.png" class="uiIcon" alt="">
+                    <span class="uiItem" id="profile">Личный кабинет</span>
+                </div>
+                <div class="myProfileBody">
+                    <img src="./img/cart.png" class="uiIcon" alt="">
+                    <span class="uiItem">Корзина</span>
+                </div>
+                <div class="myProfileBody">
+                    <span class="uiPrice" id="userWallet">1300.00kzt</span>
+                </div>
+                <img src="./img/search-icon.png" class="searchIcon" alt="">
+            </div>
+
+        </div>
+        <div class="mainHeader" id="mainHeader">
+            <div class="logoBody">
+                <span class="logo" onclick="location.href = 'index.html'">RIQZO</span>
+            </div>
+            <div class="mainHeaderNav">
+                <a href="index.html" class="headerItem">Главная</a>
+                <a href="catalog.html" class="headerItem">Каталог</a>
+                <a href="catalog.html" class="headerItem">Все категории</a>
+                <a href="index.html" class="headerItem">О нас</a>
+                <a href="contacts.html" class="headerItem">Контакты</a>
+            </div>
+        </div>
+    </header>
+    <button onclick="createTestsArray()" style="position: fixed; right: 10px; bottom: 10px; z-index: 99999;">Создать
+        массив</button>
+    <div class="intro">
+        <div style="display: flex; flex-direction: column; justify-content: flex-start;">
+            <span class="introSpan">
+                RIQZO Online Market
+            </span>
+            <span class="introSpan" style="font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 24px;">
+                Топ 1 на рынке Казахстана
+            </span>
+            <button onclick="location.href = 'catalog.html'" class="orangeButton" style="width: 50%; margin-top: 30px;">Каталог</button>
+        </div>
+    </div>
+    <div class="text">
+        <h1>Наша Миссия</h1>
+        <div class="text_img">
+            <div class="texts">
+                <p class="matin">Мы предоставляем услуги наилучшего <br> качества всем жителям страны! <br> Мы обслуживаем клиента так, как хотели бы <br> чтоб обслуживали нас и наших близких!</p>
+            </div>
+            <div class="image">
+                <img src="../RIQZO/img/about us man image.jpg" alt="">
+            </div>
+        </div>
+     
+    </div>
+    
+    <div class="model_kompetencii">
+        <h2>Модель компетенции</h2>
+        <p class="tekst">Модель компетенций
+            В  RIQZO Online Market принята своя модель профессиональных компетенций. Для развития каждой регулярно проводятся тренинги, нацеленные на личностный рост. Благодаря участию в корпоративных тренингах и семинарах сотрудники постоянно повышают свою квалификацию, обретают новые профессиональные знания и навыки. Всем обеспечивается индивидуальный подход. Каждому сотруднику предоставлена возможность повышать квалификацию и профессионализм. Тренинги проводятся по развитию следующих компетенций:</p>
+    </div>
+
+    <section class="missionBl">
+        <div class="trainings">
+            <div class="training">
+                <div class="trainingPreview">
+                    <div class="trainingImg">
+                           <img class="abc" src="../RIQZO/img/training1.png" alt="">
+                    </div>
+                    <p>Клиентоориентированность</p>
+                </div>
+                <div class="trainingInfo">
+                    Создавай отношения,совершенствуй сервис!
+                </div>
+            </div>
+            <div class="training">
+                <div class="trainingPreview">
+                    <div class="trainingImg">
+                           <img class="abc" src="../RIQZO/img/small.kz_ru_nur-sultan_mission.png" alt="">
+                    </div>
+                    <p>Критическое сышление</p>
+                </div>
+                <div class="trainingInfo">
+                    Анализируй, сомневайся, формируй свое мнение!
+                </div>
+            </div>
+            <div class="training">
+                <div class="trainingPreview">
+                    <div class="trainingImg">
+                           <img class="abc" src="../RIQZO/img/small.kz_ru_nur-sultan_mission (1).png" alt="">
+                    </div>
+                    <p>Драйв</p>
+                </div>
+                <div class="trainingInfo">
+                    Верь в себя, стремись к вершинам!
+                </div>
+            </div>
+            <div class="training">
+                <div class="trainingPreview">
+                    <div class="trainingImg">
+                           <img class="abc" src="../RIQZO/img/small.kz_ru_nur-sultan_mission (2).png" alt="">
+                    </div>
+                    <p>Способность к изменениям</p>
+                </div>
+                <div class="trainingInfo">
+                    Изменения не только возможны, но и неизбежны!
+                </div>
+            </div>
+            <div class="training">
+                <div class="trainingPreview">
+                    <div class="trainingImg">
+                           <img class="abc" src="../RIQZO/img/small.kz_ru_nur-sultan_mission (3).png" alt="">
+                    </div>
+                    <p>Эффективная коммуникация</p>
+                </div>
+                <div class="trainingInfo">
+                    Стремись к качественному общению!
+                </div>
+            </div>
+        </div>
+        <div class="sContainer">
+            <section class="ourValuesBl">
+                <h1>Наши Ценности</h1>
+                <div class="ourValues">
+                    <div class="ourValue">
+                       <h3>Эффективность</h3>
+                       <div class="ourValueInfo">
+                           "Принцип трез Д: думать,делать,достигать"
+                       </div>
+                    </div>
+                    <div class="ourValue">
+                        <h3>Развитие</h3>
+                        <div class="ourValueInfo">
+                            "Новые технологии, бизнес-модели, оборудование, процессы"
+                        </div>
+                     </div>
+                     <div class="ourValue">
+                        <h3>Команда профи</h3>
+                        <div class="ourValueInfo">
+                            "Мы ценим в человеке умение быть достойным членом команды
+                            "
+                        </div>
+                     </div>
+                     <div class="ourValue">
+                        <h3>Уважение</h3>
+                        <div class="ourValueInfo">
+                            "Руководитель уважает мнение сотрудников,<br> а сотрудники уважают мнение руководителя
+
+                            Честность и порядочность
+                            "
+                        </div>
+                     </div>
+                     <div class="ourValue">
+                        <h3>Честность и порядочность</h3>
+                        <div class="ourValueInfo">
+                            "Мы строим со всеми открытые и честные отношения"
+                        </div>
+                     </div>
+                </div>
+            </section>
+        </div>
+        
+    </section>
+    
+
+
+    <footer class="footer">
+        <div class="footerLogo">
+            <div class="logoBody">
+                <span class="logo" onclick="location.href = 'index.html'">RIQZO</span>
+            </div>
+        </div>
+        <div class="footerBLock">
+            <span class="fbTitle">
+                Навигация по сайту
+            </span>
+            <div class="fbList">
+                <a href="index.html" class="footerLink">Главная</a>
+                <a href="catalog.html" class="footerLink">Каталог</a>
+                <a href="index.html" class="footerLink">О нас</a>
+                <a href="contacts.html" class="footerLink">Контакты</a>
+            </div>
+        </div>
+        <div class="footerBLock">
+            <span class="fbTitle">
+                Все категории
+            </span>
+            <div class="fbList">
+                <a class="footerLink">Фрукты</a>
+                <a class="footerLink">Молочные продукты</a>
+                <a class="footerLink">Овощи</a>
+                <a class="footerLink">Мясо</a>
+            </div>
+        </div>
+        <div class="footerBLock">
+            <span class="fbTitle">
+                Наши адреса
+            </span>
+            <div class="fbList">
+                <a class="footerLink">Нур-Султан, Затаевича 9/5</a>
+                <a class="footerLink">Алматы, Бокейхана 32</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        function createTestsArray() {
+            let users = []
+            localStorage.setItem('users', JSON.stringify(users))
+            console.log('CREATED')
+        }
+    </script>
+    <script src="./js/header.js"></script>
+</body>
+</html>
