@@ -16,9 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- styles  -->
     <link rel="stylesheet" href="./css/header-footer.css">
+    <link rel="stylesheet" href="./css/cart.css">
     <link rel="stylesheet" href="./css/catalog.css">
 </head>
-
+<style>
+    body{
+        overflow: auto;
+    }
+</style>
 <body>
 
     <div id="modalBody">
@@ -101,56 +106,40 @@
         </div>
     </header>
 
-    <div class="catalog">
+    <div class="cart">
 
-        <div class="catalogHead">
-
+        <div class="cartHeader">
+            <span>Ваша корзина</span>
         </div>
 
-        <div class="catalogArea">
-            <div class="filterBody">
-                <div class="filterTitle">
-                    <span>Фильтр</span>
+        <div id="items">
+            <!-- <div class="item" style="height: auto; min-height: auto;">
+                <div class="itemImageBody">
+                    <img src="./img/avacado.png" alt="" class="itemImage">
                 </div>
-                <div class="filterItems">
-                    <div class="filterItem">
-                        <span class="filterItemSpan">Категория</span>
-                        <select class="filterSelect" id="categorySelet">
-                            <option value="Все">Все</option>
-                            <option value="Фрукты">Фрукты</option>
-                            <option value="Овощи">Овощи</option>
-                            <option value="Молочные продукты">Молочные продукты</option>
-                            <option value="Ягоды">Ягоды</option>
-                            <option value="Мясо">Мясо</option>
-                        </select>
+                <div class="itemContent" style="height: auto; min-height: auto;">
+                    <div>
+                        <span class="itemName">Авакадо</span> <span class="itemCategory">Фрукты</span>
+                        <div>
+                            <span class="itemPrice">300.00kzt</span> <span class="itemPriceOld">300.00kzt</span>
+                        </div>
                     </div>
-                    <div class="filterItem">
-                        <button onclick="filter()" class="filterSelect" style="margin-top: 10px;">Применить фильтр</button>
+                    <div class="itemCount">
+                        <div class="itemCountD itemCountM">-</div>
+                        <div class="itemCountValue">3</div>
+                        <div class="itemCountD itemCountP">+</div>
                     </div>
-                </div>
-            </div>
+                    <div style="
+                        display: flex;
+                    ">
+                        <button class="addToCartBtn" style="margin: 10px;">Удалить из корзины</button>
+                        <button class="addToCartBtn" style="margin: 10px;">Описание</button>
+                    </div>
 
-            <div id="productsBody">
-                <!-- <div class="item">
-                    <div class="itemImageBody">
-                        <img src="./img/avacado.png" alt="" class="itemImage">
-                    </div>
-                    <div class="itemContent">
-                        <div>
-                            <span class="itemName">Авакадо</span> <span class="itemCategory">Фрукты</span>
-                            <div>
-                                <span class="itemPrice">300.00kzt</span> <span class="itemPriceOld">300.00kzt</span>
-                            </div>
-                        </div>
-                        <div>
-                            <button class="addToCartBtn">Добавить в козину</button>
-                            <button class="addToCartBtn">Описание</button>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
+                </div>
+            </div> -->
         </div>
-
+    </div>
     </div>
 
     <footer class="footer">
@@ -193,7 +182,7 @@
         </div>
     </footer>
     <script src="./js/header.js"></script>
-    <script src="./js/catalog.js"></script>
+    <script src="./js/cart.js"></script>
 </body>
 
 </html>

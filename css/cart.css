@@ -1,0 +1,131 @@
+#modalBody{
+    position: absolute;
+    z-index: 100000000;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#modal{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalContent{
+    position: relative;
+    height: 600px;
+    width: 500px;
+    background-color: #FF8126;
+    border-radius: 20px;
+}
+.modalHead{
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#exitModal{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.modalHeadTitle{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: white;
+}
+.modalImageBody{
+    height: 250px;
+    width: 100%;
+}
+.modalImage{
+    height: 100%;
+    width: 100%;
+}
+.modalContentInfo{
+    padding: 20px;
+    box-sizing: border-box;
+}
+.modalContentInfoTitle{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+}
+.modalContentInfoCategory{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #d8d8d8;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.modalContentInfoHead{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+.modalPrice{
+    color: #25578a;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.cart{
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+.cartHeader{
+    width: 100%;
+    font-size: 32px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: #FF8126;
+}
+.itemCount{
+    width: 100%;
+    display: flex;
+}
+.itemCountD{
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    background-color: rgb(192, 192, 192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.itemCountD:hover{
+    background-color: rgb(172, 172, 172);
+}
+.itemCountM{
+    border-radius: 10px 0 0 10px;
+}
+.itemCountP{
+    border-radius: 0 10px 10px 0;
+}
+.itemCountValue{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    height: 32px;
+    width: auto;
+    min-width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+#items{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}

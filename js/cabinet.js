@@ -24,7 +24,7 @@ if (localStorage.getItem('loggedUser') === null) {
     userCart.innerText = loggedUser.userCart.length
     let cartSum = 0;
     for(i=0; i < loggedUser['userCart'].length; i++){
-        cartSum += loggedUser['userCart'][i]['price']
+        cartSum += loggedUser['userCart'][i]['price'] * loggedUser['userCart'][i]['count']
     }
     userCartSum.innerText = `${cartSum}.00kzt`
     console.log(`${loggedUser.userWallet}.00kzt`)

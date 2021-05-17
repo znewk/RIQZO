@@ -1,4 +1,3 @@
-let itemsArray = []
 let users = JSON.parse(localStorage.getItem('users'))
 let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
 
@@ -90,7 +89,7 @@ class Item {
     }
 }
 
-itemsArray = [
+let itemsArray = [
     new Item('Авакадо', 'Фрукты', 'кг', 140, 4, 2, 16, 300, 'avacado.png'),
     new Item('Апельсин', 'Фрукты', 'кг', 200, 4, 2, 16, 450, 'orange.png'),
     new Item('Яйцо куриное', 'Мясо', 'шт', 100, 4, 2, 16, 290, 'dairy.jpg'),
@@ -119,23 +118,33 @@ function addToCart(itemName) {
         alert('Вы не авторизованы!')
         location.href = 'autorization.html'
     } else {
-        let currentItem = null;
-        for (i = 0; i < itemsArray.length; i++) {
-            if (itemsArray[i]['name'] === itemName) {
-                currentItem = new Item(itemsArray[i].name,
-                    itemsArray[i].category,
-                    itemsArray[i].unitrev,
-                    itemsArray[i].energy,
-                    itemsArray[i].proteine,
-                    itemsArray[i].fat,
-                    itemsArray[i].carbohydrate,
-                    itemsArray[i].price,
-                    itemsArray[i].image)
+        let isNotFound = true;
+        for (i = 0; i < loggedUser['userCart'].length; i++) {
+            if (loggedUser['userCart'][i]['name'] === itemName) {
+                isNotFound = false;
             }
         }
+        if (isNotFound) {
+            let currentItem = null;
+            for (i = 0; i < itemsArray.length; i++) {
+                if (itemsArray[i]['name'] === itemName) {
+                    currentItem = new Item(itemsArray[i].name,
+                        itemsArray[i].category,
+                        itemsArray[i].unitrev,
+                        itemsArray[i].energy,
+                        itemsArray[i].proteine,
+                        itemsArray[i].fat,
+                        itemsArray[i].carbohydrate,
+                        itemsArray[i].price,
+                        itemsArray[i].image)
+                }
+            }
 
-        loggedUser['userCart'].push(currentItem)
-        saveNewUserSettingInData()
+            loggedUser['userCart'].push(currentItem)
+            saveNewUserSettingInData()
+        } else{
+            alert('Товар уже добавлен в корзину! Удалить его можно перейдя в нее.')
+        }
     }
 }
 
