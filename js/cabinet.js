@@ -15,13 +15,18 @@ if (localStorage.getItem('loggedUser') === null) {
     let userWalletInput = document.getElementById('userWalletSum')
     let userPurchasesCount = document.getElementById('purchasesCount')
     let userCart = document.getElementById('userCart')
+    let userCartSum = document.getElementById('sbPrice')
 
     userNameInput.value = loggedUser.userName
     userGenderInput.value = loggedUser.userGender
     userWalletInput.value = `${loggedUser.userWallet}.00kzt`
     userPurchasesCount.innerText = loggedUser.userPurchases.length
     userCart.innerText = loggedUser.userCart.length
-
+    let cartSum = 0;
+    for(i=0; i < loggedUser['userCart'].length; i++){
+        cartSum += loggedUser['userCart'][i]['price'] * loggedUser['userCart'][i]['count']
+    }
+    userCartSum.innerText = `${cartSum}.00kzt`
     console.log(`${loggedUser.userWallet}.00kzt`)
 
     if (loggedUser.userAdress === '') {

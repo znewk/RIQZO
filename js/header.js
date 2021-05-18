@@ -27,3 +27,37 @@ if (localStorage.getItem('loggedUser') === null) {
         location.href = 'cabinet.html'
     })
 }
+
+function categoryAll(){
+    localStorage.setItem('category', 'Все')
+    location.href = 'catalog.html'
+}
+function categoryFruits(){
+    localStorage.setItem('category', 'Фрукты')
+    location.href = 'catalog.html'
+}
+function categoryVeggies(){
+    localStorage.setItem('category', 'Овощи')
+    location.href = 'catalog.html'
+}
+function categoryMeat(){
+    localStorage.setItem('category', 'Мясо')
+    location.href = 'catalog.html'
+}
+function categoryMilk(){
+    localStorage.setItem('category', 'Молочные продукты')
+    location.href = 'catalog.html'
+}
+function categoryBerry(){
+    localStorage.setItem('category', 'Ягоды')
+    location.href = 'catalog.html'
+}
+
+function openCart(){
+    if (localStorage.getItem('loggedUser') === null) {
+        alert('Вы не авторизованы')
+        location.href = 'autorization.html'
+    } else {
+        location.href = 'cart.html'
+    }
+}

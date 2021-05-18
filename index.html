@@ -28,7 +28,7 @@
                 </div>
                 <div class="myProfileBody">
                     <img src="./img/cart.png" class="uiIcon" alt="">
-                    <span class="uiItem">Корзина</span>
+                    <span class="uiItem" onclick="openCart()">Корзина</span>
                 </div>
                 <div class="myProfileBody">
                     <span class="uiPrice" id="userWallet">1300.00kzt</span>
@@ -43,8 +43,8 @@
             </div>
             <div class="mainHeaderNav">
                 <a href="index.html" class="headerItem">Главная</a>
-                <a href="catalog.html" class="headerItem">Каталог</a>
-                <a href="catalog.html" class="headerItem">Все категории</a>
+                <a onclick="categoryAll()" class="headerItem">Каталог</a>
+                <a onclick="categoryAll()" class="headerItem">Все категории</a>
                 <a href="index.html" class="headerItem">О нас</a>
                 <a href="contacts.html" class="headerItem">Контакты</a>
             </div>
@@ -77,7 +77,7 @@
                     <span class="productSubTitle">
                         Самый вкусный, узбекский фрукты, из солнечной Киргизии! Вай, машаллах!    
                     </span>
-                    <button class="orangeButtonMini" style="margin-top: 30px;">Перейти</button>
+                    <button class="orangeButtonMini" onclick="categoryFruits()" style="margin-top: 30px;">Перейти</button>
                 </div>
             </div>
             <div class="saleBLock">
@@ -90,11 +90,11 @@
                     <span class="productSubTitle">
                         Свежие продукты, только из под быка!
                     </span>
-                    <button class="orangeButtonMini" style="margin-top: 30px;">Перейти</button>
+                    <button class="orangeButtonMini" onclick="categoryMilk()" style="margin-top: 30px;">Перейти</button>
                 </div>
             </div>
             <div class="saleBLock">
-                <div class="productImgBlock" style="background-image: url(./img/veggies.jpg);">
+                <div class="productImgBlock"  style="background-image: url(./img/veggies.jpg);">
                 </div>
                 <div class="productInfoBody">
                     <span class="productName">
@@ -103,7 +103,7 @@
                     <span class="productSubTitle">
                         Самый вкусный, узбекский фрукты, из солнечной Киргизии! Вай, машаллах!    
                     </span>
-                    <button class="orangeButtonMini" style="margin-top: 30px;">Перейти</button>
+                    <button class="orangeButtonMini" onclick="categoryVeggies()" style="margin-top: 30px;">Перейти</button>
                 </div>
             </div>
         </div>
@@ -219,6 +219,9 @@
                 <span class="whyUsText">Наши операторы ответят на все ваши вопросы!</span>
             </div>
         </div>
+    </div>
+
+    <div class="subBlock">
 
     </div>
 
@@ -234,7 +237,7 @@
             </span>
             <div class="fbList">
                 <a href="index.html" class="footerLink">Главная</a>
-                <a href="catalog.html" class="footerLink">Каталог</a>
+                <a onclick="categoryAll()" class="footerLink">Каталог</a>
                 <a href="index.html" class="footerLink">О нас</a>
                 <a href="contacts.html" class="footerLink">Контакты</a>
             </div>
@@ -244,10 +247,11 @@
                 Все категории
             </span>
             <div class="fbList">
-                <a class="footerLink">Фрукты</a>
-                <a class="footerLink">Молочные продукты</a>
-                <a class="footerLink">Овощи</a>
-                <a class="footerLink">Мясо</a>
+                <a class="footerLink" onclick="categoryFruits()">Фрукты</a>
+                <a class="footerLink" onclick="categoryMilk()">Молочные продукты</a>
+                <a class="footerLink" onclick="categoryVeggies()">Овощи</a>
+                <a class="footerLink" onclick="categoryMeat()">Мясо</a>
+                <a class="footerLink" onclick="categoryBerry()">Ягоды</a>
             </div>
         </div>
         <div class="footerBLock">
