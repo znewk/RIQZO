@@ -27,7 +27,6 @@ if (localStorage.getItem('loggedUser') === null) {
         cartSum += loggedUser['userCart'][i]['price'] * loggedUser['userCart'][i]['count']
     }
     userCartSum.innerText = `${cartSum}.00kzt`
-    console.log(`${loggedUser.userWallet}.00kzt`)
 
     if (loggedUser.userAdress === '') {
         userAddressInput.value = 'Не указан'

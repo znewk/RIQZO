@@ -35,6 +35,9 @@ body{
     align-items: flex-start;
     overflow-y: scroll  ;
 }
+#productsBody::-webkit-scrollbar{
+    display: none;
+}
 .item{
     width: 250px;
     height: 275px;

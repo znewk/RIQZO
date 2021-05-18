@@ -3,10 +3,9 @@ $('#nullItems').hide()
 if(localStorage.getItem('loggedUser') === null){
     location.href = 'autorization.html'
 }
-$('#paymentMessage').hide()
 let users = JSON.parse(localStorage.getItem('users'))
 let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
-let userCart = loggedUser['userCart']
+let userCart = loggedUser['userPurchases']
 function saveNewUserSettingInData() {
     localStorage.setItem('loggedUser', JSON.stringify(loggedUser))
     for (i = 0; i < users.length; i++) {
@@ -15,99 +14,6 @@ function saveNewUserSettingInData() {
             users.push(loggedUser)
             localStorage.setItem('users', JSON.stringify(users))
         }
-    }
-}
-class ItemPur {
-    name;
-    category;
-    unitrev;
-    energy;
-    proteine;
-    fat;
-    carbohydrate;
-    price;
-    totalPrice;
-    image;
-    count;
-
-    constructor(newName,
-        newCategory,
-        newUnitRev,
-        newEnergy,
-        newProtiene,
-        newFat,
-        newCarbohydrate,
-        newPrice,
-        newImage,
-        newTotalPrice,
-        newCout
-        ) {
-        this.name = newName;
-        this.category = newCategory;
-        this.unitrev = newUnitRev
-        this.energy = newEnergy;
-        this.proteine = newProtiene;
-        this.fat = newFat;
-        this.carbohydrate = newCarbohydrate;
-        this.price = newPrice
-        this.image = newImage
-        this.totalPrice = newTotalPrice;
-        this.count = newCout;
-    }
-
-    get name() {
-        return this.name;
-    }
-    set name(e) {
-        this.name = e;
-    }
-    get category() {
-        return this.category;
-    }
-    set category(e) {
-        this.category = e;
-    }
-    get unitrev() {
-        return this.unitrev;
-    }
-    set unitrev(e) {
-        this.unitrev = e;
-    }
-    get energy() {
-        return this.energy;
-    }
-    set energy(e) {
-        this.energy = e;
-    }
-    get proteine() {
-        return this.proteine;
-    }
-    set proteine(e) {
-        this.proteine = e;
-    }
-    get fat() {
-        return this.fat;
-    }
-    set fat(e) {
-        this.fat = e;
-    }
-    get carbohydrate() {
-        return this.carbohydrate;
-    }
-    set carbohydrate(e) {
-        this.carbohydrate = e;
-    }
-    get price() {
-        return this.price;
-    }
-    set price(e) {
-        this.price = e;
-    }
-    get image() {
-        return this.image;
-    }
-    set image(e) {
-        this.image = e;
     }
 }
 class Item {
@@ -211,19 +117,11 @@ itemsArray = [
     new Item('Арбуз', 'Ягоды', 'кг', 130, 4, 2, 16, 390, 'watermelon.jpg'),
     new Item('Черешня', 'Ягоды', 'кг', 130, 4, 2, 16, 390, 'sweetcherry.jpg'),
 ]
-let cartSum = 0;
-    for(i=0; i < loggedUser['userCart'].length; i++){
-        cartSum += loggedUser['userCart'][i]['price'] * loggedUser['userCart'][i]['count']
-    }
 
 if(userCart.length === 0){
     $('#nullItems').show()
-    pricePayment.innerHTML = 'К оплате: <span style="color: #25578a">0.00kzt</span>'
-    itemsCountPayment.innerHTML = 'Количество товаров: <span style="color: #25578a">0шт</span>'
 }else{
     for(let i = 0; i<userCart.length; i++){
-        pricePayment.innerHTML = `К оплате: <span style="color: #25578a">${cartSum}.00kzt</span>`
-        itemsCountPayment.innerHTML = `Количество товаров: <span style="color: #25578a">${userCart.length}шт</span>`
         $('#items').append(`
         <div class="item" style="height: auto; min-height: auto;">
             <div class="itemImageBody">
@@ -237,14 +135,8 @@ if(userCart.length === 0){
                     </div>
                 </div>
                 <div class="itemCount">
-                    <div class="itemCountD itemCountM" onclick='downItemCount("${userCart[i]['name']}")'>-</div>
-                    <div class="itemCountValue">${userCart[i]['count']}</div>
-                    <div class="itemCountD itemCountP" onclick='upItemCount("${userCart[i]['name']}")'>+</div>
+                    <div class="itemCountValue">Количество: ${userCart[i]['count']}${userCart[i]['unitrev']}</div>
                 </div>
-                <div style="
-                    display: flex;
-                ">
-                    <button class="addToCartBtn" style="margin: 10px;" onclick='deleteItemFromCart("${userCart[i]['name']}")'>Удалить из корзины</button>
                     <button class="addToCartBtn" style="margin: 10px;" onclick='openModal("${userCart[i]['name']}")'>Описание</button>
                 </div>
     
@@ -271,8 +163,7 @@ function openModal(itemName) {
                 itemsArray[i].fat,
                 itemsArray[i].carbohydrate,
                 itemsArray[i].price,
-                itemsArray[i].image,
-                )
+                itemsArray[i].image)
         }
     }
     $('#modal').empty()
@@ -321,67 +212,4 @@ function openModal(itemName) {
     </div>
     `)
     modal.fadeIn('fast')
-}
-
-function upItemCount(itemName){
-    for(i=0;i<userCart.length;i++){
-        if(userCart[i]['name'] === itemName){
-            userCart[i]['count']++
-            userCart[i]['totalPrice'] += userCart[i]['price']
-            saveNewUserSettingInData()
-            location.reload()
-        }
-    }
-}
-function downItemCount(itemName){
-    for(i=0;i<userCart.length;i++){
-        if(userCart[i]['name'] === itemName){
-            userCart[i]['count']--
-            userCart[i]['totalPrice'] -= userCart[i]['price']
-            saveNewUserSettingInData()
-            location.reload()
-        }
-    }
-}
-
-function deleteItemFromCart(itemName){
-    for(i=0;i<userCart.length; i++){
-        if(userCart[i]['name'] === itemName){
-            userCart.splice(i,1)
-            saveNewUserSettingInData()
-            location.reload()
-        }
-        
-    }
-}
-
-function pay(){
-    if(userCart.length === 0){
-        alert('Ваша корзина пуста')
-    }else if(loggedUser['userAdress'] === ''){
-        alert('Вы не указали адрес доставки! Невозможно оплатить! Заполните данные в личном кабинете!')
-    } else if(loggedUser['userPhone'] === 0){
-        alert('Вы не указали свой телефон! Невозможно оплатить! Заполните данные в личном кабинете!')
-    } else if(loggedUser['userWallet'] < cartSum){
-        alert('Недостаточно средств! Пополните баланс!')
-    } else{
-        for(i=0;i<userCart.length;i++){
-            loggedUser['userPurchases'].push(new ItemPur(userCart[i].name,
-                userCart[i].category,
-                userCart[i].unitrev,
-                userCart[i].energy,
-                userCart[i].proteine,
-                userCart[i].fat,
-                userCart[i].carbohydrate,
-                userCart[i].price,
-                userCart[i].image,
-                userCart[i].totalPrice
-                ))
-        }
-        console.log(loggedUser['userPurchases'])
-        loggedUser['userCart'] = []
-        loggedUser['userWallet'] = (loggedUser['userWallet'] - cartSum);
-        saveNewUserSettingInData()
-        alert('Оплата выполнена! Мы сообщим Вам о доставке через СМС!')
-    }
 }

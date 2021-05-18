@@ -65,7 +65,7 @@
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
 }
-.userCart{
+#userCart{
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
 }
@@ -75,7 +75,7 @@
     font-size: 20px;
 }
 
-.sbPrice {
+#sbPrice {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     color: #FF8126;

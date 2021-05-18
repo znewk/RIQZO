@@ -61,3 +61,12 @@ function openCart(){
         location.href = 'cart.html'
     }
 }
+
+function myPurchases(){
+    if (localStorage.getItem('loggedUser') === null) {
+        alert('Вы не авторизованы')
+        location.href = 'autorization.html'
+    } else {
+        location.href = 'mypurchases.html'
+    }
+}

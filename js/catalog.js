@@ -10,6 +10,7 @@ class Item {
     fat;
     carbohydrate;
     price;
+    totalPrice;
     image;
     count = 1;
 
@@ -31,6 +32,7 @@ class Item {
         this.carbohydrate = newCarbohydrate;
         this.price = newPrice
         this.image = newImage
+        this.totalPrice = newPrice;
     }
 
     get name() {

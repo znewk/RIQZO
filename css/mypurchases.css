@@ -131,7 +131,7 @@ body{
     flex-wrap: wrap;
     padding-left: 5%;
     box-sizing: border-box;
-    width: 80%;
+    width: 100%;
     overflow: auto;
     scrollbar-width: 0;
     height: 67vh;
