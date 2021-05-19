@@ -375,7 +375,8 @@ function pay(){
                 userCart[i].carbohydrate,
                 userCart[i].price,
                 userCart[i].image,
-                userCart[i].totalPrice
+                userCart[i].totalPrice,
+                userCart[i].count
                 ))
         }
         console.log(loggedUser['userPurchases'])
