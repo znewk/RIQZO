@@ -68,7 +68,7 @@ if (localStorage.getItem('loggedUser') === null) {
             unbEdit = false
         } else {
             if (userNameInput.value.length < 6) {
-                alert('Слишком короткое имя!')
+                openAlert('Слишком короткое имя!')
             } else {
                 loggedUser.userName = userNameInput.value;
                 localStorage.removeItem('loggedUser')
@@ -87,9 +87,9 @@ if (localStorage.getItem('loggedUser') === null) {
             uabEdit = false;
         } else {
             if (userAddressInput.value.length < 6) {
-                alert('Слишком короткий адрес!')
+                openAlert('Слишком короткий адрес!')
             } else if (userAddressInput.value === 'Не указан') {
-                alert('Вы ничего не указали!')
+                openAlert('Вы ничего не указали!')
             } else {
                 loggedUser.userAdress = userAddressInput.value;
                 localStorage.removeItem('loggedUser')
@@ -108,9 +108,9 @@ if (localStorage.getItem('loggedUser') === null) {
             upbEdit = false
         } else {
             if (userPhoneInput.value.length < 10) {
-                alert('Слишком короткий номер!')
+                openAlert('Слишком короткий номер!')
             } else if (userAddressInput.value === 'Не указан') {
-                alert('Вы ничего не указали!')
+                openAlert('Вы ничего не указали!')
             } else {
                 loggedUser.userPhone = userPhoneInput.value;
                 localStorage.removeItem('loggedUser')
@@ -156,12 +156,12 @@ if (localStorage.getItem('loggedUser') === null) {
     function confirmTop() {
         let codeInput = document.getElementById('codeInput')
         if (document.getElementById('moneySum').value.length === 0) {
-            alert('Введите сумму!')
+            openAlert('Введите сумму!')
         } else if (codeInput.value.length != 4) {
-            alert('Неккоректно введены данные!')
+            openAlert('Неккоректно введены данные!')
             codeInput.style.border = '1px solid red'
         } else if (codeInput.value != code) {
-            alert('Неверный код!')
+            openAlert('Неверный код!')
             codeInput.style.border = '1px solid red'
         } else {
             loggedUser.userWallet = Number(loggedUser.userWallet) + Number(document.getElementById('moneySum').value);

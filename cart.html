@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./css/header-footer.css">
     <link rel="stylesheet" href="./css/cart.css">
     <link rel="stylesheet" href="./css/catalog.css">
+    <link rel="stylesheet" href="./css/customalert.css">
 </head>
 <style>
     body{
@@ -26,6 +27,21 @@
 </style>
 <body>
 
+    <div id="alertBody">
+        <div id="alertMessage">
+            <div>
+                <span style="font-weight: 700; font-size: 18px;">Ошибка!</span>
+                <div style="margin-top: 5px;">
+                    <span id='alertMessageSpan'>Вы не указали штото!</span>
+                </div> 
+            </div>
+            
+            
+            <div class="alertHelpMessage">
+                Нажмите в любом месте для закрытия
+            </div>
+        </div>
+    </div>
     <div id="modalBody">
         <div id="modal">
             <div class="modalContent">
@@ -175,6 +191,7 @@
             </div>
         </div>
     </footer>
+    <script src="./js/customalert.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/cart.js"></script>
 </body>

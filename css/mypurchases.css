@@ -178,6 +178,9 @@ body{
     background-color: white;
     color: #FF8126;
 }
+.cartBody{
+    width: 100%;
+}
 #paymentMessage{
     font-weight: bold;
     color: white;

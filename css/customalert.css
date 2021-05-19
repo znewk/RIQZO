@@ -1,0 +1,36 @@
+#alertBody{
+    position: absolute;
+    z-index: 100000000;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(2px);
+    background-color: rgba(112, 0, 0, 0.253);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#alertMessage{
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    height: auto;
+    min-height: 80px;
+    width: 300px;
+    border-top: 3px rgb(145, 0, 0) solid;
+    border-bottom: 3px gainsboro solid;
+    background: white;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+}
+.alertHelpMessage{
+    margin-top: 10px;
+    color: gray;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+#alertMessageSpan{
+    margin-top: 10px;
+}

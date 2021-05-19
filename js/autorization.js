@@ -60,18 +60,18 @@ changeToLog.addEventListener('click', function() {
 let register = () => {
     if (username.value.length < 6) {
         username.style.border = "2px solid red"
-        alert('Слишком короткое имя!')
+        openAlert('Слишком короткое имя!')
     } else if (login.value.length < 6) {
         login.style.border = "2px solid red"
-        alert('Логин должен состоять как минимум из 6 знаков')
+        openAlert('Логин должен состоять как минимум из 6 знаков')
     } else if (password.value.length < 8 && passwordRepeat.value.length < 8) {
         password.style.border = "2px solid red"
         passwordRepeat.style.border = "2px solid red"
-        alert('Пароль должен состоять как минимум из 8 знаков')
+        openAlert('Пароль должен состоять как минимум из 8 знаков')
     } else if (password.value !== passwordRepeat.value) {
         password.style.border = "2px solid red"
         passwordRepeat.style.border = "2px solid red"
-        alert('Пароли не совпадают')
+        openAlert('Пароли не совпадают')
     } else {
         let random = Math.floor(Math.random() * 1000) + 1;
         let user = {
@@ -137,7 +137,7 @@ let loginBtn = () => {
         } else {
             loginLog.style.border = '2px solid red'
             passwordLog.style.border = '2px solid red'
-            alert('Неверные данные!')
+            openAlert('Неверные данные!')
         }
 
     }

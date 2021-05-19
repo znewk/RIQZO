@@ -78,6 +78,7 @@
     background-color: transparent;
     border-bottom: 1px solid #FF8126;
     font-size: 18px;
+    border-radius: 10px;
 }
 
 .input:focus {

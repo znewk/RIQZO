@@ -145,7 +145,7 @@ function addToCart(itemName) {
             loggedUser['userCart'].push(currentItem)
             saveNewUserSettingInData()
         } else{
-            alert('Товар уже добавлен в корзину! Удалить его можно перейдя в нее.')
+            openAlert('Товар уже добавлен в корзину! Удалить его можно перейдя в нее.')
         }
     }
 }

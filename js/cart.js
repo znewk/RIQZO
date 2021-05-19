@@ -357,13 +357,13 @@ function deleteItemFromCart(itemName){
 
 function pay(){
     if(userCart.length === 0){
-        alert('Ваша корзина пуста')
+        openAlert('Ваша корзина пуста')
     }else if(loggedUser['userAdress'] === ''){
-        alert('Вы не указали адрес доставки! Невозможно оплатить! Заполните данные в личном кабинете!')
+        openAlert('Вы не указали адрес доставки! Невозможно оплатить! Заполните данные в личном кабинете!')
     } else if(loggedUser['userPhone'] === 0){
-        alert('Вы не указали свой телефон! Невозможно оплатить! Заполните данные в личном кабинете!')
+        openAlert('Вы не указали свой телефон! Невозможно оплатить! Заполните данные в личном кабинете!')
     } else if(loggedUser['userWallet'] < cartSum){
-        alert('Недостаточно средств! Пополните баланс!')
+        openAlert('Недостаточно средств! Пополните баланс!')
     } else{
         for(i=0;i<userCart.length;i++){
             loggedUser['userPurchases'].push(new ItemPur(userCart[i].name,
