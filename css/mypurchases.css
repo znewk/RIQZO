@@ -128,15 +128,23 @@ body{
 }
 #items{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding-left: 5%;
     box-sizing: border-box;
     width: 100%;
     overflow: auto;
     scrollbar-width: 0;
     height: 67vh;
-    align-items: baseline;
-    
+    flex-direction: column;
+}
+.date{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: #FF8126;
+    font-size: 24px;
+}
+.thisDateItems{
+    display: flex;
 }
 #items::-webkit-scrollbar{
     display: none;

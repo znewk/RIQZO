@@ -1,6 +1,7 @@
 $('#modalBody').hide()
 $('#nullItems').hide()
-if(localStorage.getItem('loggedUser') === null){
+moment.locale('ru')
+if (localStorage.getItem('loggedUser') === null) {
     location.href = 'autorization.html'
 }
 $('#paymentMessage').hide()
@@ -41,7 +42,7 @@ class ItemPur {
         newImage,
         newTotalPrice,
         newCout
-        ) {
+    ) {
         this.name = newName;
         this.category = newCategory;
         this.unitrev = newUnitRev
@@ -212,16 +213,16 @@ itemsArray = [
     new Item('Черешня', 'Ягоды', 'кг', 130, 4, 2, 16, 390, 'sweetcherry.jpg'),
 ]
 let cartSum = 0;
-    for(i=0; i < loggedUser['userCart'].length; i++){
-        cartSum += loggedUser['userCart'][i]['price'] * loggedUser['userCart'][i]['count']
-    }
+for (i = 0; i < loggedUser['userCart'].length; i++) {
+    cartSum += loggedUser['userCart'][i]['price'] * loggedUser['userCart'][i]['count']
+}
 
-if(userCart.length === 0){
+if (userCart.length === 0) {
     $('#nullItems').show()
     pricePayment.innerHTML = 'К оплате: <span style="color: #25578a">0.00kzt</span>'
     itemsCountPayment.innerHTML = 'Количество товаров: <span style="color: #25578a">0шт</span>'
-}else{
-    for(let i = 0; i<userCart.length; i++){
+} else {
+    for (let i = 0; i < userCart.length; i++) {
         pricePayment.innerHTML = `К оплате: <span style="color: #25578a">${cartSum}.00kzt</span>`
         itemsCountPayment.innerHTML = `Количество товаров: <span style="color: #25578a">${userCart.length}шт</span>`
         $('#items').append(`
@@ -233,7 +234,7 @@ if(userCart.length === 0){
                 <div>
                     <span class="itemName">${userCart[i]['name']}</span> <span class="itemCategory">Фрукты</span>
                     <div>
-                        <span class="itemPrice">${userCart[i]['totalPrice']}.00kzt</span> <span class="itemPriceOld">${userCart[i]['price']+40}.00kzt</span>
+                        <span class="itemPrice">${userCart[i]['totalPrice']}.00kzt</span> <span class="itemPriceOld">${userCart[i]['price'] + 40}.00kzt</span>
                     </div>
                 </div>
                 <div class="itemCount">
@@ -272,7 +273,7 @@ function openModal(itemName) {
                 itemsArray[i].carbohydrate,
                 itemsArray[i].price,
                 itemsArray[i].image,
-                )
+            )
         }
     }
     $('#modal').empty()
@@ -323,9 +324,9 @@ function openModal(itemName) {
     modal.fadeIn('fast')
 }
 
-function upItemCount(itemName){
-    for(i=0;i<userCart.length;i++){
-        if(userCart[i]['name'] === itemName){
+function upItemCount(itemName) {
+    for (i = 0; i < userCart.length; i++) {
+        if (userCart[i]['name'] === itemName) {
             userCart[i]['count']++
             userCart[i]['totalPrice'] += userCart[i]['price']
             saveNewUserSettingInData()
@@ -333,9 +334,9 @@ function upItemCount(itemName){
         }
     }
 }
-function downItemCount(itemName){
-    for(i=0;i<userCart.length;i++){
-        if(userCart[i]['name'] === itemName){
+function downItemCount(itemName) {
+    for (i = 0; i < userCart.length; i++) {
+        if (userCart[i]['name'] === itemName) {
             userCart[i]['count']--
             userCart[i]['totalPrice'] -= userCart[i]['price']
             saveNewUserSettingInData()
@@ -344,29 +345,33 @@ function downItemCount(itemName){
     }
 }
 
-function deleteItemFromCart(itemName){
-    for(i=0;i<userCart.length; i++){
-        if(userCart[i]['name'] === itemName){
-            userCart.splice(i,1)
+function deleteItemFromCart(itemName) {
+    for (i = 0; i < userCart.length; i++) {
+        if (userCart[i]['name'] === itemName) {
+            userCart.splice(i, 1)
             saveNewUserSettingInData()
             location.reload()
         }
-        
+
     }
 }
 
-function pay(){
-    if(userCart.length === 0){
+function pay() {
+    if (userCart.length === 0) {
         openAlert('Ваша корзина пуста')
-    }else if(loggedUser['userAdress'] === ''){
+    } else if (loggedUser['userAdress'] === '') {
         openAlert('Вы не указали адрес доставки! Невозможно оплатить! Заполните данные в личном кабинете!')
-    } else if(loggedUser['userPhone'] === 0){
+    } else if (loggedUser['userPhone'] === 0) {
         openAlert('Вы не указали свой телефон! Невозможно оплатить! Заполните данные в личном кабинете!')
-    } else if(loggedUser['userWallet'] < cartSum){
+    } else if (loggedUser['userWallet'] < cartSum) {
         openAlert('Недостаточно средств! Пополните баланс!')
-    } else{
-        for(i=0;i<userCart.length;i++){
-            loggedUser['userPurchases'].push(new ItemPur(userCart[i].name,
+    } else {
+        let purchase = {
+            date: moment().format('LLLL'),
+            item: []
+        }
+        for (i = 0; i < userCart.length; i++) {
+            purchase['item'].push(new ItemPur(userCart[i].name,
                 userCart[i].category,
                 userCart[i].unitrev,
                 userCart[i].energy,
@@ -377,12 +382,14 @@ function pay(){
                 userCart[i].image,
                 userCart[i].totalPrice,
                 userCart[i].count
-                ))
+            ))
         }
+        loggedUser['userPurchases'].push(purchase)
         console.log(loggedUser['userPurchases'])
         loggedUser['userCart'] = []
         loggedUser['userWallet'] = (loggedUser['userWallet'] - cartSum);
         saveNewUserSettingInData()
         alert('Оплата выполнена! Мы сообщим Вам о доставке через СМС!')
+        location.reload()
     }
 }

@@ -6,6 +6,7 @@ if(localStorage.getItem('loggedUser') === null){
 let users = JSON.parse(localStorage.getItem('users'))
 let loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
 let userCart = loggedUser['userPurchases']
+console.log(userCart)
 function saveNewUserSettingInData() {
     localStorage.setItem('loggedUser', JSON.stringify(loggedUser))
     for (i = 0; i < users.length; i++) {
@@ -123,27 +124,39 @@ if(userCart.length === 0){
 }else{
     for(let i = 0; i<userCart.length; i++){
         $('#items').append(`
-        <div class="item" style="height: auto; min-height: auto;">
-            <div class="itemImageBody">
-                <img src="./img/${userCart[i]['image']}" alt="" class="itemImage">
-            </div>
-            <div class="itemContent" style="height: auto; min-height: auto;">
-                <div>
-                    <span class="itemName">${userCart[i]['name']}</span> <span class="itemCategory">Фрукты</span>
-                    <div>
-                        <span class="itemPrice">${userCart[i]['totalPrice']}.00kzt</span> <span class="itemPriceOld">${userCart[i]['price']+40}.00kzt</span>
-                    </div>
-                </div>
-                <div class="itemCount">
-                    <div class="itemCountValue">Количество: ${userCart[i]['count']}${userCart[i]['unitrev']}</div>
-                </div>
-                    <button class="addToCartBtn" style="margin: 10px;" onclick='openModal("${userCart[i]['name']}")'>Описание</button>
-                </div>
-    
+        <div class='itemBlockBlock'>
+            <span class="date">${userCart[i].date}</span>
+            <div id="thisDateItems${i}" class='thisDateItems'>
+            
             </div>
         </div>
         `)
+        let thisDateItems = $(`#thisDateItems${i}`)
+        for(k=0; k<userCart[i].item.length;k++){
+            thisDateItems.append(`
+                <div class="item" style="height: auto; min-height: auto;">
+                <div class="itemImageBody">
+                    <img src="./img/${userCart[i].item[k]['image']}" alt="" class="itemImage">
+                </div>
+                <div class="itemContent" style="height: auto; min-height: auto;">
+                    <div>
+                        <span class="itemName">${userCart[i].item[k]['name']}</span> <span class="itemCategory">Фрукты</span>
+                        <div>
+                            <span class="itemPrice">${userCart[i].item[k]['totalPrice']}.00kzt</span> <span class="itemPriceOld">${userCart[i].item[k]['price']+40}.00kzt</span>
+                        </div>
+                    </div>
+                    <div class="itemCount">
+                        <div class="itemCountValue">Количество: ${userCart[i].item[k]['count']}${userCart[i].item[k]['unitrev']}</div>
+                    </div>
+                        <button class="addToCartBtn" style="margin: 10px;" onclick='openModal("${userCart[i].item[k]['name']}")'>Описание</button>
+                    </div>
+        
+                </div>
+            </div>
+            `)
+        }
     }
+    
 }
 
 let modal = $('#modalBody');
